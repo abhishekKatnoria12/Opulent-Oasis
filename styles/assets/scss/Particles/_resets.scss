@@ -1,0 +1,90 @@
+@import "variables";
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: $container;
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: $fs-6xl;
+  font-weight: $fw-semibold;
+  font-family: "Raleway";
+  color: $black;
+  line-height: 110%;
+}
+
+h2 {
+  font-size: $fs-5xl;
+  font-weight: $fw-semibold;
+  font-family: "Raleway";
+  ;
+  color: $white;
+  line-height: 120%;
+}
+
+h3 {
+  font-size: $fs-5xl;
+  font-weight: $fw-semibold;
+  font-family: "Raleway";
+  color: $white;
+  line-height: 120%;
+}
+
+h4 {
+  font-size: $fs-3xl;
+  font-weight: $fw-semibold;
+  font-family: "Raleway";
+  line-height: 140%;
+  color: $primary-color;
+}
+
+h5 {
+  font-size: $fs-2xl;
+  font-weight: $fw-semibold;
+  font-family: "Raleway";
+  color: $primary-color;
+  line-height: 145%;
+}
+
+h6 {
+  font-size: $fs-lg;
+  font-weight: $fw-semibold;
+  font-family: "Raleway";
+  color: $primary-color;
+  line-height: 150%;
+}
+
+p {
+  font-size: $fs-lg;
+  font-weight: $fw-regular;
+  font-family: var(--font-jakarta);
+  color: $primary-color;
+  line-height: 150%;
+}

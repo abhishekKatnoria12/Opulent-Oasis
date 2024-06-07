@@ -1,0 +1,12 @@
+@import "../../styles/assets/scss/sass-loader.scss"; 
+
+
+.topNavbar {
+    border: 2px solid beige;
+
+    :global .topNavbar {
+        h1 {
+            border: 2px solid beige;
+        }
+    }
+}

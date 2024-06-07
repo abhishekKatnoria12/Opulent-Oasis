@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import styles from "./TopNavbar.module.scss"
 
 const TopNavBar = () => {
   return (
-    <div>TopNavBar</div>
-  )
-}
+    <nav className={`${styles.topNavbar}`}>   
+    <h1>hi</h1>
+    </nav>
+  );
+};
 
-export default TopNavBar
+export default TopNavBar;
