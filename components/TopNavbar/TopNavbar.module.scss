@@ -1,12 +1,27 @@
-@import "../../styles/assets/scss/sass-loader.scss"; 
-
+@import "../../styles/assets/scss/sass-loader.scss";
 
 .topNavbar {
-    border: 2px solid beige;
+    width: 100%;
+    background-color: $primary-color;
 
     :global .topNavbar {
-        h1 {
-            border: 2px solid beige;
+        &__wrap {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 32px;
+        }
+
+        &__links {
+            padding-block: 6px;
+
+            a {
+                font-size: $fs-sm;
+                line-height: 155%;
+                display: inline-block;
+                color: $white;
+                font-weight: $fw-regular;
+            }
         }
     }
 }

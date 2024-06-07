@@ -1,10 +1,22 @@
 import React from "react";
-import styles from "./TopNavbar.module.scss"
+import styles from "./TopNavbar.module.scss";
+import Link from "next/link";
 
-const TopNavBar = () => {
+interface props {
+  props:NavLink[]
+}
+const TopNavBar = ({props}: props) => {
   return (
-    <nav className={`${styles.topNavbar}`}>   
-    <h1>hi</h1>
+    <nav className={`${styles.topNavbar} .continer-fluid`}>
+      <div className=" topNavbar__cont container-sm">
+        <ul className="topNavbar__wrap">
+          {props.map((item, index) => (
+            <li key={index} className="topNavbar__links">
+              <Link href={item?.href}>{item?.text}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
