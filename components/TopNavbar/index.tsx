@@ -3,12 +3,12 @@ import styles from "./TopNavbar.module.scss";
 import Link from "next/link";
 
 interface props {
-  props:NavLink[]
+  props:NavLink[];
 }
 const TopNavBar = ({props}: props) => {
   return (
     <nav className={`${styles.topNavbar} .continer-fluid`}>
-      <div className=" topNavbar__cont container-sm">
+      <div className="topNavbar__cont container-sm">
         <ul className="topNavbar__wrap">
           {props.map((item, index) => (
             <li key={index} className="topNavbar__links">

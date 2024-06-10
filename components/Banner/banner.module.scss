@@ -1,0 +1,48 @@
+@import "../../styles/assets/scss/sass-loader.scss";
+
+.banner {
+    :global .banner {
+        &__wrap {
+            width: 100%;
+            max-width: 689px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            align-items: center;
+            flex-direction: column;
+            margin-block: 109px 202px;
+        }
+
+        &__title {
+
+            text-align: center;
+            font-size: $fs-6xl;
+            font-weight: $fw-semibold;
+            line-height: 110%;
+            padding-bottom: 1rem;
+
+        }
+
+        &__desc {
+
+            text-align: center;
+            padding-bottom: 44px;
+            color: $white;
+
+        }
+
+        &__btn {
+
+            background-color: $primary-color;
+            padding: 14px 2rem;
+            border: none;
+            border-radius: 4px;
+            color: $white;
+            font-size: $fs-lg;
+            line-height: 150%;
+            font-weight: $fw-semibold;
+            cursor: pointer;
+
+        }
+    }
+}

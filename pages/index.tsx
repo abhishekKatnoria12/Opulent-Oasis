@@ -5,7 +5,8 @@ import styles from "@/styles/Home.module.scss";
 import TopNavBar from "@/components/TopNavbar";
 import Navbar from "@/components/Navbar";
 
-import { topNav } from "@/mock.data";
+import { navbar, score, topNav } from "@/mock.data";
+import Score from "@/components/Score";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -17,7 +18,8 @@ const Home = () => {
   return (
     <main className={`${jakarta.variable}`}>
       <TopNavBar props={topNav} />
-      <Navbar />
+      <Navbar props={navbar} />
+      <Score props={score} />
     </main>
   );
 };
