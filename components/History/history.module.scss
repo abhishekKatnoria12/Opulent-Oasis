@@ -1,0 +1,48 @@
+@import "../../styles/assets/scss/sass-loader.scss";
+
+.history {
+    :global .history {
+        &__wrap {
+            width: 100%;
+            max-width: 1215px;
+            margin-block: 150px 75px;
+            display: flex;
+            gap: 52px;
+            align-items: center;
+        }
+
+        &__left {
+            display: flex;
+            width: 100%;
+            max-width: 590px;
+        }
+
+        &__img {
+            object-fit: cover;
+        }
+
+        &__right {
+            width: 572px;
+            height: 370px;
+        }
+
+        &__title {
+            color: $black;
+            padding-bottom: 12px;
+
+            span {
+                color: $primary-color;
+            }
+        }
+
+        &__subtitle {
+            color: $black;
+            padding-bottom: 20px;
+        }
+
+        &__desc {
+            color: $black;
+            font-family: "Raleway";
+        }
+    }
+}

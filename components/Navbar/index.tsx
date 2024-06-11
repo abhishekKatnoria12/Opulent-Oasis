@@ -14,7 +14,6 @@ interface props {
 
 const Navbar = ({ props }: props) => {
   const data = props;
-  console.log(data);
   return (
     <div className={`${styles.navbar} .continer-fluid`}>
       <div className="navbar__wrap container-sm">

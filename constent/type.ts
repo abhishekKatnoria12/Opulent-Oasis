@@ -28,4 +28,15 @@ declare interface NavbarItem {
 declare interface ScoreProp {
   count: string;
   text: string;
-} 
+}
+
+declare interface content {
+  title: string;
+  subtitle: string;
+  desc: string;
+}
+
+declare interface HistoryProps {
+  content: content;
+  history_banner: PImage;
+}
