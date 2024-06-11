@@ -32,11 +32,15 @@ declare interface ScoreProp {
 
 declare interface content {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   desc: string;
 }
 
 declare interface HistoryProps {
   content: content;
   history_banner: PImage;
+}
+declare interface BrandsProps {
+  content: content;
+  brands: PImage;
 }

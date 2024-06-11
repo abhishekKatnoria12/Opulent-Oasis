@@ -93,3 +93,16 @@ export const history = {
     desc: "Headquartered in Jeddah, HBMC’s 35 branches stretch out geographically to cover the entire Kingdom of Saudi Arabia. 600 employees who aim to thrive in servicing our 4,000 + clients.In addition to offering a wide variety of water complementary quality products, HBMC is a leader for introducing the latest technology and innovations in the field. At HBMC, We offer an experience. Most of our products are directly imported from manufacturers around the globe.",
   },
 };
+
+export const ourBrands = {
+  content: {
+    title: "Our <span>Brands</span>",
+    desc: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis",
+  },
+  brands: {
+    src: "/brands.webp",
+    width: 517,
+    height: 290,
+    alt: "Brands",
+  },
+};
