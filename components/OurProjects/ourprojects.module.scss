@@ -1,0 +1,153 @@
+@import "../../styles/assets/scss/sass-loader.scss";
+
+.project {
+  :global .project {
+    &__cont {
+      max-width: 1300px;
+      width: 100%;
+      margin: auto;
+      margin-block: 150px;
+    }
+
+    &__wrap {
+      background-color: $background-color;
+      padding: 70px 83px;
+      border-radius: 32px;
+    }
+
+    &__content {
+      max-width: 452px;
+      width: 100%;
+    }
+
+    &__heading {
+      color: $black;
+      padding-bottom: 12px;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    &__desc {
+      color: $black;
+      padding-bottom: 52px;
+    }
+
+    &__img {
+      width: 100%;
+      max-width: 330px;
+      padding-bottom: 1rem;
+    }
+
+    &__details {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    &__subContent {
+      padding-bottom: 24px;
+    }
+
+    &__title {
+      color: $black;
+    }
+
+    &__subTitle {
+      color: $black;
+      padding-bottom: 1rem;
+    }
+
+    &__client-label {
+      font-size: $fs-2xl;
+      color: $primary-color;
+      font-weight: $fw-semibold;
+    }
+
+    &__client-name {
+      color: black;
+      padding-left: 3px;
+      font-weight: $fw-regular;
+    }
+
+
+    &__demo {
+
+      .slick-prev,
+      .slick-next {
+        z-index: 1;
+      }
+
+      .slick-prev {
+        left: 92%;
+        top: -15%;
+      }
+
+      .slick-next {
+        right: 3%;
+        top: -15%;
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        color: #114B9F;
+        font-size: 30px;
+
+      }
+
+      & .slick-slide {
+        padding-right: 20px;
+      }
+
+      & .slick-dots {
+        position: unset;
+        padding-top: 50px;
+
+        li {
+          margin: 0;
+        }
+
+        & ::before {
+          font-size: 14px;
+        }
+
+        & .slick-active {
+          margin: 0 1.5px;
+
+          & ::before {
+            color: #114B9F;
+            opacity: 1;
+            font-size: 14px;
+
+          }
+        }
+      }
+    }
+
+    &__additional {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 12px;
+    }
+
+    &__info {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    &__image {
+      background: #114b9f1a;
+      width: 100%;
+      max-width: 24px;
+      border-radius: 4px;
+      padding: 4px;
+
+      img {
+        display: block;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+}

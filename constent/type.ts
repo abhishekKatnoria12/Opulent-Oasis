@@ -30,18 +30,18 @@ declare interface ScoreProp {
   text: string;
 }
 
-declare interface content {
+declare interface Content {
   title: string;
   subtitle?: string;
   desc: string;
 }
 
 declare interface HistoryProps {
-  content: content;
+  content: Content;
   history_banner: PImage;
 }
 declare interface BrandsProps {
-  content: content;
+  content: Content;
   brands: PImage;
 }
 
@@ -60,4 +60,26 @@ interface Testimonial {
 interface OurClient {
   heading: string;
   testimonials: Testimonial[];
+}
+
+declare interface ProjectClient {
+  label: string;
+  name: string;
+}
+
+declare interface Projectsprops {
+  image: PImage;
+  details: Content;
+  client: ProjectClient;
+  additionalInfo: additionalInfo[];
+}
+declare interface additionalInfo {
+  icon: PImage;
+  text: string;
+}
+
+declare interface ourProjects {
+  heading: string;
+  desc: string;
+  projects: Projectsprops[];
 }

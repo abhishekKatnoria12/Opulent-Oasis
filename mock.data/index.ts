@@ -189,3 +189,414 @@ export const ourClient = {
   ],
 };
 
+export const ourProjects = {
+  heading: "Our Recent <span>Projects</span>",
+  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin felis ut eros laoreet",
+  projects: [
+    {
+      image: {
+        src: "/product_1.webp",
+        width: 330,
+        height: 195,
+        alt: "Al Raha Beach Buildings",
+      },
+      details: {
+        title: "Al Raha Beach Buildings",
+        desc: "Etiam nec nulla justo Curabitur tristique,",
+      },
+      client: {
+        label: "Client:",
+        name: "Al Dar",
+      },
+      additionalInfo: [
+        {
+          icon: {
+            src: "/location.svg",
+            width: 16,
+            height: 16,
+            alt: "location",
+          },
+          text: "ABU DHABI",
+        },
+        {
+          icon: {
+            src: "/logo_2.svg",
+            width: 16,
+            height: 16,
+            alt: "Al Futtaim Carillion",
+          },
+          text: "Al Futtaim Carillion",
+        },
+        {
+          icon: {
+            src: "/logo_3.svg",
+            width: 16,
+            height: 16,
+            alt: "",
+          },
+          text: "Turner",
+        },
+      ],
+    },
+    {
+      image: {
+        src: "/product_2.webp",
+        width: 330,
+        height: 195,
+        alt: "Al Raha Beach Buildings",
+      },
+      details: {
+        title: "Al Raha Beach Buildings",
+        desc: "Etiam nec nulla justo Curabitur tristique,",
+      },
+      client: {
+        label: "Client:",
+        name: "Al Dar",
+      },
+      additionalInfo: [
+        {
+          icon: {
+            src: "/location.svg",
+            width: 16,
+            height: 16,
+            alt: "location",
+          },
+          text: "ABU DHABI",
+        },
+        {
+          icon: {
+            src: "/logo_2.svg",
+            width: 16,
+            height: 16,
+            alt: "Al Futtaim Carillion",
+          },
+          text: "Al Futtaim Carillion",
+        },
+        {
+          icon: {
+            src: "/logo_3.svg",
+            width: 16,
+            height: 16,
+            alt: "",
+          },
+          text: "Turner",
+        },
+      ],
+    },
+    {
+      image: {
+        src: "/product_3.webp",
+        width: 330,
+        height: 195,
+        alt: "Al Raha Beach Buildings",
+      },
+      details: {
+        title: "Al Raha Beach Buildings",
+        desc: "Etiam nec nulla justo Curabitur tristique,",
+      },
+      client: {
+        label: "Client:",
+        name: "Al Dar",
+      },
+      additionalInfo: [
+        {
+          icon: {
+            src: "/location.svg",
+            width: 16,
+            height: 16,
+            alt: "location",
+          },
+          text: "ABU DHABI",
+        },
+        {
+          icon: {
+            src: "/logo_2.svg",
+            width: 16,
+            height: 16,
+            alt: "Al Futtaim Carillion",
+          },
+          text: "Al Futtaim Carillion",
+        },
+        {
+          icon: {
+            src: "/logo_3.svg",
+            width: 16,
+            height: 16,
+            alt: "",
+          },
+          text: "Turner",
+        },
+      ],
+    },
+    {
+      image: {
+        src: "/product_1.webp",
+        width: 330,
+        height: 195,
+        alt: "Al Raha Beach Buildings",
+      },
+      details: {
+        title: "Al Raha Beach Buildings",
+        desc: "Etiam nec nulla justo Curabitur tristique,",
+      },
+      client: {
+        label: "Client:",
+        name: "Al Dar",
+      },
+      additionalInfo: [
+        {
+          icon: {
+            src: "/location.svg",
+            width: 16,
+            height: 16,
+            alt: "location",
+          },
+          text: "ABU DHABI",
+        },
+        {
+          icon: {
+            src: "/logo_2.svg",
+            width: 16,
+            height: 16,
+            alt: "Al Futtaim Carillion",
+          },
+          text: "Al Futtaim Carillion",
+        },
+        {
+          icon: {
+            src: "/logo_3.svg",
+            width: 16,
+            height: 16,
+            alt: "",
+          },
+          text: "Turner",
+        },
+      ],
+    },
+    {
+      image: {
+        src: "/product_2.webp",
+        width: 330,
+        height: 195,
+        alt: "Al Raha Beach Buildings",
+      },
+      details: {
+        title: "Al Raha Beach Buildings",
+        desc: "Etiam nec nulla justo Curabitur tristique,",
+      },
+      client: {
+        label: "Client:",
+        name: "Al Dar",
+      },
+      additionalInfo: [
+        {
+          icon: {
+            src: "/location.svg",
+            width: 16,
+            height: 16,
+            alt: "location",
+          },
+          text: "ABU DHABI",
+        },
+        {
+          icon: {
+            src: "/logo_2.svg",
+            width: 16,
+            height: 16,
+            alt: "Al Futtaim Carillion",
+          },
+          text: "Al Futtaim Carillion",
+        },
+        {
+          icon: {
+            src: "/logo_3.svg",
+            width: 16,
+            height: 16,
+            alt: "",
+          },
+          text: "Turner",
+        },
+      ],
+    },
+    {
+      image: {
+        src: "/product_3.webp",
+        width: 330,
+        height: 195,
+        alt: "Al Raha Beach Buildings",
+      },
+      details: {
+        title: "Al Raha Beach Buildings",
+        desc: "Etiam nec nulla justo Curabitur tristique,",
+      },
+      client: {
+        label: "Client:",
+        name: "Al Dar",
+      },
+      additionalInfo: [
+        {
+          icon: {
+            src: "/location.svg",
+            width: 16,
+            height: 16,
+            alt: "location",
+          },
+          text: "ABU DHABI",
+        },
+        {
+          icon: {
+            src: "/logo_2.svg",
+            width: 16,
+            height: 16,
+            alt: "Al Futtaim Carillion",
+          },
+          text: "Al Futtaim Carillion",
+        },
+        {
+          icon: {
+            src: "/logo_3.svg",
+            width: 16,
+            height: 16,
+            alt: "",
+          },
+          text: "Turner",
+        },
+      ],
+    },
+    {
+      image: {
+        src: "/product_1.webp",
+        width: 330,
+        height: 195,
+        alt: "Al Raha Beach Buildings",
+      },
+      details: {
+        title: "Al Raha Beach Buildings",
+        desc: "Etiam nec nulla justo Curabitur tristique,",
+      },
+      client: {
+        label: "Client:",
+        name: "Al Dar",
+      },
+      additionalInfo: [
+        {
+          icon: {
+            src: "/location.svg",
+            width: 16,
+            height: 16,
+            alt: "location",
+          },
+          text: "ABU DHABI",
+        },
+        {
+          icon: {
+            src: "/logo_2.svg",
+            width: 16,
+            height: 16,
+            alt: "Al Futtaim Carillion",
+          },
+          text: "Al Futtaim Carillion",
+        },
+        {
+          icon: {
+            src: "/logo_3.svg",
+            width: 16,
+            height: 16,
+            alt: "",
+          },
+          text: "Turner",
+        },
+      ],
+    },
+    {
+      image: {
+        src: "/product_2.webp",
+        width: 330,
+        height: 195,
+        alt: "Al Raha Beach Buildings",
+      },
+      details: {
+        title: "Al Raha Beach Buildings",
+        desc: "Etiam nec nulla justo Curabitur tristique,",
+      },
+      client: {
+        label: "Client:",
+        name: "Al Dar",
+      },
+      additionalInfo: [
+        {
+          icon: {
+            src: "/location.svg",
+            width: 16,
+            height: 16,
+            alt: "location",
+          },
+          text: "ABU DHABI",
+        },
+        {
+          icon: {
+            src: "/logo_2.svg",
+            width: 16,
+            height: 16,
+            alt: "Al Futtaim Carillion",
+          },
+          text: "Al Futtaim Carillion",
+        },
+        {
+          icon: {
+            src: "/logo_3.svg",
+            width: 16,
+            height: 16,
+            alt: "",
+          },
+          text: "Turner",
+        },
+      ],
+    },
+    {
+      image: {
+        src: "/product_3.webp",
+        width: 330,
+        height: 195,
+        alt: "Al Raha Beach Buildings",
+      },
+      details: {
+        title: "Al Raha Beach Buildings",
+        desc: "Etiam nec nulla justo Curabitur tristique,",
+      },
+      client: {
+        label: "Client:",
+        name: "Al Dar",
+      },
+      additionalInfo: [
+        {
+          icon: {
+            src: "/location.svg",
+            width: 16,
+            height: 16,
+            alt: "location",
+          },
+          text: "ABU DHABI",
+        },
+        {
+          icon: {
+            src: "/logo_2.svg",
+            width: 16,
+            height: 16,
+            alt: "Al Futtaim Carillion",
+          },
+          text: "Al Futtaim Carillion",
+        },
+        {
+          icon: {
+            src: "/logo_3.svg",
+            width: 16,
+            height: 16,
+            alt: "",
+          },
+          text: "Turner",
+        },
+      ],
+    },
+  ],
+};

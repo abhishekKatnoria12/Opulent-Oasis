@@ -10,6 +10,7 @@ import {
   navbar,
   ourBrands,
   ourClient,
+  ourProjects,
   score,
   topNav,
 } from "@/mock.data";
@@ -17,6 +18,7 @@ import Score from "@/components/Score";
 import History from "@/components/History";
 import OurBrands from "@/components/OurBrands";
 import OurClients from "@/components/OurClients";
+import OurProjects from "@/components/OurProjects";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -33,6 +35,7 @@ const Home = () => {
       <History props={history} />
       <OurBrands props={ourBrands} />
       <OurClients props={ourClient} />
+      <OurProjects props={ourProjects} />
     </main>
   );
 };
