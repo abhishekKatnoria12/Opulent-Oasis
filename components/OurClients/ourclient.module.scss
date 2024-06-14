@@ -1,0 +1,109 @@
+@import "../../styles/assets/scss/sass-loader.scss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+.ourclient {
+    :global .ourclient {
+        &__cont {
+            max-width: 1140px;
+            width: 100%;
+            margin: 0 auto;
+            margin-block: 150px;
+        }
+
+        &__title {
+            color: black;
+            text-align: center;
+            padding-bottom: 52px;
+        }
+
+        &__slide {
+            padding: 45px 231px;
+            border-radius: 16px;
+            box-shadow: 0px 0px 24px 0px #00000014;
+        }
+
+        &__vector {
+            position: absolute;
+            content: "";
+            background-image: url("/vector_client.svg");
+            object-fit: cover;
+            background-repeat: no-repeat;
+            max-width: 40px;
+            width: 100%;
+            top: 47%;
+            left: 16%;
+            min-height: 36px;
+        }
+
+        &__content {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        &__wrap {
+            position: relative;
+        }
+
+        &__logo {
+            max-width: 102px;
+            width: 100%;
+            margin: auto;
+            margin-bottom: 1rem;
+        }
+
+        &__img {
+            object-fit: cover;
+
+        }
+
+        &__review {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        &__star {
+            width: 100%;
+            max-width: 75px;
+            padding-bottom: 24px;
+        }
+
+        &__desc {
+            text-align: center;
+            color: $black;
+            padding-inline: 5px;
+            padding-bottom: 24px;
+        }
+
+        &__demo {
+
+            & .slick-dots {
+                position: unset;
+
+                li {
+                    margin: 0;
+                }
+
+                & ::before {
+                    font-size: 14px;
+                }
+
+                & .slick-active {
+                    margin: 0 1.5px;
+
+                    & ::before {
+                        color: #114B9F;
+                        opacity: 1;
+                        font-size: 14px;
+
+                    }
+                }
+            }
+        }
+    }
+}

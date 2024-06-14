@@ -44,3 +44,20 @@ declare interface BrandsProps {
   content: content;
   brands: PImage;
 }
+
+interface Identity {
+  name: string;
+  role: string;
+  star: PImage;
+  desc: string;
+}
+
+interface Testimonial {
+  client: PImage;
+  identity: Identity;
+}
+
+interface OurClient {
+  heading: string;
+  testimonials: Testimonial[];
+}

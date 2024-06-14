@@ -106,3 +106,86 @@ export const ourBrands = {
     alt: "Brands",
   },
 };
+
+export const ourClient = {
+  heading: "What Our Clients Say",
+  testimonials: [
+    {
+      client: {
+        src: "/client.webp",
+        width: 102,
+        height: 102,
+        alt: "History",
+      },
+      identity: {
+        name: "Ralph Edwards",
+        role: "Senior SEO Executive",
+        star: {
+          src: "/star.webp",
+          width: 75,
+          height: 15,
+          alt: "History",
+        },
+        desc: "I am absolutely delighted to share my positive experience as a client. From the moment I engaged with the company, I was met with exceptional professionalism and dedication to ensuring my satisfaction. The level of service provided was truly outstanding, and every interaction I had with the team was characterized by their unwavering commitment to excellence.",
+      },
+    },
+    {
+      client: {
+        src: "/client.webp",
+        width: 102,
+        height: 102,
+        alt: "History",
+      },
+      identity: {
+        name: "Ralph Edwards",
+        role: "Senior SEO Executive",
+        star: {
+          src: "/star.webp",
+          width: 75,
+          height: 15,
+          alt: "History",
+        },
+        desc: "I am absolutely delighted to share my positive experience as a client. From the moment I engaged with the company, I was met with exceptional professionalism and dedication to ensuring my satisfaction. The level of service provided was truly outstanding, and every interaction I had with the team was characterized by their unwavering commitment to excellence.",
+      },
+    },
+    {
+      client: {
+        src: "/client.webp",
+        width: 102,
+        height: 102,
+        alt: "History",
+      },
+      identity: {
+        name: "Ralph Edwards",
+        role: "Senior SEO Executive",
+        star: {
+          src: "/star.webp",
+          width: 75,
+          height: 15,
+          alt: "History",
+        },
+        desc: "I am absolutely delighted to share my positive experience as a client. From the moment I engaged with the company, I was met with exceptional professionalism and dedication to ensuring my satisfaction. The level of service provided was truly outstanding, and every interaction I had with the team was characterized by their unwavering commitment to excellence.",
+      },
+    },
+    {
+      client: {
+        src: "/client.webp",
+        width: 102,
+        height: 102,
+        alt: "History",
+      },
+      identity: {
+        name: "Ralph Edwards",
+        role: "Senior SEO Executive",
+        star: {
+          src: "/star.webp",
+          width: 75,
+          height: 15,
+          alt: "History",
+        },
+        desc: "I am absolutely delighted to share my positive experience as a client. From the moment I engaged with the company, I was met with exceptional professionalism and dedication to ensuring my satisfaction. The level of service provided was truly outstanding, and every interaction I had with the team was characterized by their unwavering commitment to excellence.",
+      },
+    },
+  ],
+};
+
