@@ -1,0 +1,65 @@
+@import "../../styles/assets/scss/sass-loader.scss";
+
+.faq {
+    :global .faq {
+        &__cont {
+            width: 100%;
+            max-width: 782px;
+            margin: auto;
+            margin-block: 150px;
+        }
+
+        &__wrap {
+            text-align: center;
+        }
+
+        &__heading {
+            padding-bottom: 12px;
+            color: $black;
+
+            span {
+                color: $primary-color;
+            }
+        }
+
+        &__desc {
+            color: $black;
+            padding-bottom: 52px;
+        }
+
+        &__acc-wrap {
+            box-shadow: 0px 0px 24px 0px #00000014;
+            margin-bottom: 1rem;
+            padding: 12px;
+            border-radius: 6px;
+            border: 0.5px solid #0000001a;
+            cursor: pointer;
+        }
+
+        &__acc-wrap-var {
+            border: none;
+        }
+
+        &__title {
+            color: $black;
+            font-size: $fs-lg;
+        }
+
+        &__subTitle {
+            padding-top: 8px;
+            color: $black;
+        }
+
+        &__logo {
+            width: 100%;
+            max-width: 12px;
+            display: block;
+        }
+
+        &__arrow {
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+        }
+    }
+}

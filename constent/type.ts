@@ -2,9 +2,7 @@ declare interface NavLink {
   text: string;
   href: string;
 }
-declare interface MenuItem {
-  text: string;
-  href: string;
+declare interface MenuItem extends NavLink {
   submenu?: boolean;
 }
 declare interface PImage {
@@ -33,7 +31,7 @@ declare interface ScoreProp {
 declare interface Content {
   title: string;
   subtitle?: string;
-  desc: string;
+  desc?: string;
 }
 
 declare interface HistoryProps {
@@ -81,5 +79,13 @@ declare interface additionalInfo {
 declare interface ourProjects {
   heading: string;
   desc: string;
-  projects: Projectsprops[];
+  projects?: Projectsprops[];
+}
+
+declare interface FaqsProp {
+  heading: string;
+  desc: string;
+  faqsData: Content[];
+  add: PImage;
+  sub: PImage;
 }

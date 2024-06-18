@@ -33,46 +33,48 @@ const OurProjects = ({ props }: props) => {
             {data?.desc && <p className="project__desc">{data?.desc}</p>}
           </div>
 
-          <Slider {...settings} className="project__client project__demo">
-            {data?.projects.map((items, index) => (
-              <div className="project__details">
-                <div key={index} className="project__img">
-                  <Image
-                    src={items?.image?.src}
-                    width={items?.image?.width}
-                    height={items?.image?.height}
-                    alt={items?.image?.alt}
-                    className="project__project"
-                  />
-                </div>
-                <div className="project__subContent">
-                  <h5 className="project__title">{items?.details?.title}</h5>
-                  <p className="project__subTitle">{items?.details?.desc}</p>
-                  <span className="project__client-label">
-                    {items?.client?.label}
-                  </span>
-                  <span className="project__client-name">
-                    {items?.client?.name}
-                  </span>
-                </div>
-                <div className="project__additional">
-                  {items?.additionalInfo.map((item, index) => (
-                    <div key={index} className="project__info">
-                      <div className="project__image">
-                        <Image
-                          src={item?.icon?.src}
-                          width={item?.icon?.width}
-                          height={item?.icon?.height}
-                          alt={item?.icon?.alt}
-                        />
+          {data?.projects && (
+            <Slider {...settings} className="project__client project__demo">
+              {data?.projects.map((items, index) => (
+                <div className="project__details" key={index}>
+                  <div key={index} className="project__img">
+                    <Image
+                      src={items?.image?.src}
+                      width={items?.image?.width}
+                      height={items?.image?.height}
+                      alt={items?.image?.alt}
+                      className="project__project"
+                    />
+                  </div>
+                  <div className="project__subContent">
+                    <h5 className="project__title">{items?.details?.title}</h5>
+                    <p className="project__subTitle">{items?.details?.desc}</p>
+                    <span className="project__client-label">
+                      {items?.client?.label}
+                    </span>
+                    <span className="project__client-name">
+                      {items?.client?.name}
+                    </span>
+                  </div>
+                  <div className="project__additional">
+                    {items?.additionalInfo.map((item, index) => (
+                      <div key={index} className="project__info">
+                        <div className="project__image">
+                          <Image
+                            src={item?.icon?.src}
+                            width={item?.icon?.width}
+                            height={item?.icon?.height}
+                            alt={item?.icon?.alt}
+                          />
+                        </div>
+                        <p>{item?.text}</p>
                       </div>
-                      <p>{item?.text}</p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          )}
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import TopNavBar from "@/components/TopNavbar";
 import Navbar from "@/components/Navbar";
 
 import {
+  Faqs,
   history,
   navbar,
   ourBrands,
@@ -19,6 +20,7 @@ import History from "@/components/History";
 import OurBrands from "@/components/OurBrands";
 import OurClients from "@/components/OurClients";
 import OurProjects from "@/components/OurProjects";
+import FAQ from "@/components/FAQ";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -36,6 +38,7 @@ const Home = () => {
       <OurBrands props={ourBrands} />
       <OurClients props={ourClient} />
       <OurProjects props={ourProjects} />
+      <FAQ props={Faqs}/>
     </main>
   );
 };

@@ -600,3 +600,44 @@ export const ourProjects = {
     },
   ],
 };
+
+export const Faqs = {
+  heading: "FAQ<span>s</span>",
+  desc: "Suspendisse potenti. Vestibulum gravida turpis ut ipsum efficitur, id ullamcorper sem semper",
+
+  sub: {
+    src: "/Sub.svg",
+    width: 12,
+    height: 2,
+    alt: "Logo",
+  },
+  add: {
+    src: "/Add.svg",
+    width: 12,
+    height: 2,
+    alt: "Logo",
+  },
+
+  faqsData: [
+    {
+      title: "Maecenas porttitor enim nec velit ultrices?",
+      subtitle:
+        "Pellentesque iaculis, nisl et consectetur mattis, neque eros finibus elit, quis semper ipsum lorem vel augue. Aliquam erat volutpat. Nunc auctor sem a arcu ultrices molestie. Etiam magna risus, pulvinar ut metus at, consequat aliquet justo. Mauris egestas aliquam ligula ut molestie",
+    },
+    {
+      title: "Maecenas porttitor enim nec velit ultrices?",
+      subtitle:
+        "Pellentesque iaculis, nisl et consectetur mattis, neque eros finibus elit, quis semper ipsum lorem vel augue. Aliquam erat volutpat. Nunc auctor sem a arcu ultrices molestie. Etiam magna risus, pulvinar ut metus at, consequat aliquet justo. Mauris egestas aliquam ligula ut molestie",
+    },
+    {
+      title: "Maecenas porttitor enim nec velit ultrices?",
+      subtitle:
+        "Pellentesque iaculis, nisl et consectetur mattis, neque eros finibus elit, quis semper ipsum lorem vel augue. Aliquam erat volutpat. Nunc auctor sem a arcu ultrices molestie. Etiam magna risus, pulvinar ut metus at, consequat aliquet justo. Mauris egestas aliquam ligula ut molestie",
+    },
+    {
+      title: "Maecenas porttitor enim nec velit ultrices?",
+      subtitle:
+        "Pellentesque iaculis, nisl et consectetur mattis, neque eros finibus elit, quis semper ipsum lorem vel augue. Aliquam erat volutpat. Nunc auctor sem a arcu ultrices molestie. Etiam magna risus, pulvinar ut metus at, consequat aliquet justo. Mauris egestas aliquam ligula ut molestie",
+    },
+  ],
+};
