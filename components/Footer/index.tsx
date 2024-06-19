@@ -8,7 +8,6 @@ interface props {
 }
 const Footer = ({ props }: props) => {
   const data = props;
-  console.log(data);
   return (
     <footer className={`${styles.footer} container-full`}>
       <div className="footer__cont">
