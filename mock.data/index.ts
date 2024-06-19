@@ -660,11 +660,90 @@ export const contact = {
       type: "email",
       placeholder: "Enter your email address",
     },
-    { label: "Any Questions?", type: "textarea", },
+    { label: "Any Questions?", type: "textarea" },
   ],
 
   btn: {
     text: "Submit",
-    href:"#"
+    href: "#",
   },
+};
+
+export const footer = {
+  footer_logo: {
+    src: "/bannerGroup.png",
+    height: 58,
+    width: 51,
+    alt: "logo",
+  },
+  text: "OpulentOasis",
+
+  footerContent: {
+    title: "Proud member of IKK Group",
+    subtitle: "Headquarters",
+    desc: "Al Nakheel, Jeddah 23241, <span>Saudi Arabia</span>",
+    footerMedia: [
+      {
+        src: "/Footer/facebook.svg",
+        width: 9,
+        height: 14.44,
+        alt: "logo",
+      },
+      {
+        src: "/Footer/instagram.svg",
+        width: 18,
+        height: 18,
+        alt: "logo",
+      },
+      {
+        src: "/Footer/twitter.svg",
+        width: 21,
+        height: 17,
+        alt: "logo",
+      },
+      {
+        src: "/Footer/youtube.svg",
+        width: 18,
+        height: 13,
+        alt: "logo",
+      },
+    ],
+  },
+
+  footerMenu: [
+    {
+      heading: "Company",
+      footerLinks: [
+        { href: "#", text: "Home" },
+        { href: "#", text: "Who we are" },
+        { href: "#", text: "Our Products" },
+        { href: "#", text: "Our Recent Projects" },
+        { href: "#", text: "Contact Us" },
+      ],
+    },
+    {
+      heading: "Contact",
+      footerLinks: [
+        { href: "#", text: "Home" },
+        { href: "#", text: "About" },
+        { href: "#", text: "Email" },
+      ],
+    },
+    {
+      heading: "IKK Group",
+      footerLinks: [
+        { href: "#", text: "Home" },
+        { href: "#", text: "Contact me" },
+        { href: "#", text: "About" },
+      ],
+    },
+    {
+      heading: "Privacy Policy",
+      footerLinks: [
+        { href: "#", text: "Home" },
+        { href: "#", text: "About" },
+        { href: "#", text: "Our Projects" },
+      ],
+    },
+  ],
 };

@@ -101,3 +101,19 @@ declare interface Contactporps extends Content {
   contactUs: ContactusProps[];
   btn: Button;
 }
+
+declare interface footerContentprops extends Content {
+  footerMedia: PImage[];
+}
+
+declare interface footerLinks {
+  heading: string;
+  footerLinks: NavLink[];
+}
+
+declare interface footerprops {
+  footer_logo: PImage;
+  text: string;
+  footerContent: footerContentprops;
+  footerMenu: footerLinks[];
+}

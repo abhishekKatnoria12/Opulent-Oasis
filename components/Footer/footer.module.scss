@@ -1,0 +1,107 @@
+@import "../../styles/assets/scss/sass-loader.scss";
+
+.footer {
+    :global .footer {
+        &__cont {
+            background-color: $primary-color;
+
+        }
+
+        &__wrap {
+            width: 100%;
+            max-width: 1140px;
+            margin: auto;
+            padding-block: 83px;
+            display: flex;
+            gap: 223px;
+
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__logo {
+            position: relative;
+
+        }
+
+        &__img {
+            max-width: 51px;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        &__logo-text {
+            left: 30px;
+            bottom: 30px;
+            font-size: $fs-2xl;
+            font-weight: 600;
+            position: absolute;
+        }
+
+        &__title {
+            color: $white;
+        }
+
+        &__subtitle {
+            color: $white;
+            padding-bottom: 2px;
+            line-height: 155%;
+        }
+
+        &__desc {
+            display: inline-block;
+            color: $white;
+            width: 100%;
+            max-width: 192px;
+            font-size: $fs-md;
+            padding-bottom: 1rem;
+            line-height: 155%;
+        }
+
+        &__media {
+            display: flex;
+            gap: 16px;
+        }
+
+        &__media-wrap {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #3b5998;
+            padding: 5px;
+            display: flex;
+            cursor: pointer;
+        }
+
+        &__media-logo {
+            object-fit: contain;
+        }
+
+        &__heading {
+            color: $white;
+            font-size: $fs-lg;
+            padding-bottom: 12px;
+        }
+
+        &__menus {
+            display: flex;
+            gap: 62px;
+
+        }
+
+        &__links-wrap {
+
+            padding-bottom: 6px;
+        }
+
+        &__links {
+            color: $white;
+            font-size: $fs-md;
+            opacity: 70%;
+        }
+
+    }
+}

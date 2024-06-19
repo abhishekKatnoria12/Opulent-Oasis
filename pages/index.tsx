@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import {
   Faqs,
   contact,
+  footer,
   history,
   navbar,
   ourBrands,
@@ -23,6 +24,7 @@ import OurClients from "@/components/OurClients";
 import OurProjects from "@/components/OurProjects";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -40,8 +42,9 @@ const Home = () => {
       <OurBrands props={ourBrands} />
       <OurClients props={ourClient} />
       <OurProjects props={ourProjects} />
-      <FAQ props={Faqs}/>
-      <Contact props={contact}/>
+      <FAQ props={Faqs} />
+      <Contact props={contact} />
+      <Footer props={footer}/>
     </main>
   );
 };
