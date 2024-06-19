@@ -40,7 +40,7 @@
         }
 
         &__desc {
-            color: $black;
+            color: rgb($black, 80%);
             padding-bottom: 1rem;
             font-family: "Raleway";
         }
@@ -87,6 +87,7 @@
             font-size: $fs-lg;
             font-weight: $fw-regular;
             line-height: 150%;
+            color: rgb($black, 80%);
         }
     }
 }

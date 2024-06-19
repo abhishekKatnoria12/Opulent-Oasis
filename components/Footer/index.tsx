@@ -80,7 +80,7 @@ const Footer = ({ props }: props) => {
             </div>
           )}
         </div>
-        <CopyRight props={copyright}/>
+        <CopyRight props={copyright} />
       </div>
     </footer>
   );

@@ -30,7 +30,7 @@
     }
 
     &__desc {
-      color: $black;
+      color: rgb($black, 80%);
       padding-bottom: 52px;
     }
 
@@ -55,7 +55,7 @@
     }
 
     &__subTitle {
-      color: $black;
+      color: rgb($black, 80%);
       padding-bottom: 1rem;
     }
 
@@ -71,9 +71,7 @@
       font-weight: $fw-regular;
     }
 
-
     &__demo {
-
       .slick-prev,
       .slick-next {
         z-index: 1;
@@ -91,9 +89,8 @@
 
       .slick-prev:before,
       .slick-next:before {
-        color: #114B9F;
+        color: #114b9f;
         font-size: 30px;
-
       }
 
       & .slick-slide {
@@ -116,10 +113,9 @@
           margin: 0 1.5px;
 
           & ::before {
-            color: #114B9F;
+            color: #114b9f;
             opacity: 1;
             font-size: 14px;
-
           }
         }
       }

@@ -36,12 +36,12 @@
         }
 
         &__subtitle {
-            color: $black;
+            color: rgb($black, 80%);
             padding-bottom: 20px;
         }
 
         &__desc {
-            color: $black;
+            color: rgb($black, 80%);
             font-family: "Raleway";
         }
     }

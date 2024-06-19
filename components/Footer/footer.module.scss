@@ -13,7 +13,6 @@
             padding-block: 83px;
             display: flex;
             gap: 223px;
-
         }
 
         &__content {
@@ -23,7 +22,6 @@
 
         &__logo {
             position: relative;
-
         }
 
         &__img {
@@ -34,7 +32,7 @@
 
         &__logo-text {
             left: 30px;
-            bottom: 30px;
+            bottom: 32px;
             font-size: $fs-2xl;
             font-weight: 600;
             position: absolute;
@@ -88,11 +86,9 @@
         &__menus {
             display: flex;
             gap: 62px;
-
         }
 
         &__links-wrap {
-
             padding-bottom: 6px;
         }
 
@@ -101,6 +97,5 @@
             font-size: $fs-md;
             opacity: 70%;
         }
-
     }
 }

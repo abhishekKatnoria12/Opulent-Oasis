@@ -2,7 +2,14 @@
 
 .navbar {
     width: 100%;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0.414375) 48.96%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%), url("/banner_image.webp");
+    background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.51) 0%,
+            rgba(0, 0, 0, 0.414375) 48.96%,
+            rgba(0, 0, 0, 0) 100%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        url("/banner_image.webp");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 800px;
@@ -45,7 +52,7 @@
             align-items: center;
 
             a {
-                color: $white;
+                color: rgb($white, 80%);
                 font-size: $fs-lg;
                 font-weight: $fw-medium;
                 line-height: 150%;
