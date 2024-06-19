@@ -641,3 +641,30 @@ export const Faqs = {
     },
   ],
 };
+
+export const contact = {
+  contactImage: {
+    src: "/contact_image.webp",
+    width: 589,
+    height: 589,
+    alt: "ContactImage",
+  },
+  title: "Contact<span>Us</span>",
+  desc: "We’d love to speak to you and understand how we can work together to make graph analytics better",
+
+  contactUs: [
+    { label: "First Name", type: "text", placeholder: "Enter your name" },
+    { label: "Last Name", type: "text", placeholder: "Enter your name" },
+    {
+      label: "Email Address*",
+      type: "email",
+      placeholder: "Enter your email address",
+    },
+    { label: "Any Questions?", type: "textarea", },
+  ],
+
+  btn: {
+    text: "Submit",
+    href:"#"
+  },
+};

@@ -24,7 +24,7 @@ declare interface NavbarItem {
 }
 
 declare interface ScoreProp {
-  count: string;
+  count?: string;
   text: string;
 }
 
@@ -88,4 +88,16 @@ declare interface FaqsProp {
   faqsData: Content[];
   add: PImage;
   sub: PImage;
+}
+
+declare interface ContactusProps {
+  label: string;
+  type: string;
+  placeholder?: string;
+}
+
+declare interface Contactporps extends Content {
+  contactImage: PImage;
+  contactUs: ContactusProps[];
+  btn: Button;
 }
