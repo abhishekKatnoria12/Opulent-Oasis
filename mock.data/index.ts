@@ -747,3 +747,7 @@ export const footer = {
     },
   ],
 };
+
+export const copyright ={
+  text: "© copyright OpulentOasis 2024",
+}

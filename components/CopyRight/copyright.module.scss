@@ -1,0 +1,17 @@
+@import "../../styles/assets/scss/sass-loader.scss";
+
+.copyright {
+    :global .copyright {
+
+        &__wrap {
+            border-top: 0.5px solid #F8F8F880;
+        }
+
+        &__title {
+            text-align: center;
+            font-size: $fs-md;
+            padding-block: 20px;
+            color: rgb($white, 80%);
+        }
+    }
+}

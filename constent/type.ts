@@ -117,3 +117,7 @@ declare interface footerprops {
   footerContent: footerContentprops;
   footerMenu: footerLinks[];
 }
+
+declare interface copyRightProps {
+  text : string;
+}

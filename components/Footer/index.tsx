@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./footer.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import CopyRight from "../CopyRight";
+import { copyright } from "@/mock.data";
 
 interface props {
   props: footerprops;
@@ -78,6 +80,7 @@ const Footer = ({ props }: props) => {
             </div>
           )}
         </div>
+        <CopyRight props={copyright}/>
       </div>
     </footer>
   );
