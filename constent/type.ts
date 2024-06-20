@@ -119,5 +119,9 @@ declare interface footerprops {
 }
 
 declare interface copyRightProps {
-  text : string;
+  text: string;
+}
+
+declare interface Banner extends Content {
+  btn: Button;
 }

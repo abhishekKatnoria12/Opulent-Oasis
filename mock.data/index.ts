@@ -59,6 +59,15 @@ export const navbar = {
   },
 };
 
+export const bannerData = {
+  title:"Shaping Bathrooms into something more",
+  desc:"Transform Your Bathroom into a Luxurious Oasis - Innovative Design and Quality Products to Create Your Dream Bathroom",
+  btn:{
+   text:"Explore Products",
+   href:"#"
+  }
+}
+
 export const score = [
   {
     count: "+12",

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Banner from "../Banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { bannerData } from "@/mock.data";
 
 interface props {
   props?: {
@@ -55,7 +56,7 @@ const Navbar = ({ props }: props) => {
           </ul>
         </div>
       </div>
-      <Banner />
+      <Banner bannerData={bannerData}/>
     </div>
   );
 };

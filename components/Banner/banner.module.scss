@@ -4,35 +4,31 @@
     :global .banner {
         &__wrap {
             width: 100%;
-            max-width: 689px;
+            max-width: 721px;
             display: flex;
             justify-content: center;
             margin: auto;
             align-items: center;
             flex-direction: column;
             margin-block: 109px 202px;
+            padding-inline: 1rem;
         }
 
         &__title {
-
             text-align: center;
             font-size: $fs-6xl;
             font-weight: $fw-semibold;
             line-height: 110%;
             padding-bottom: 1rem;
-
         }
 
         &__desc {
-
             text-align: center;
             padding-bottom: 44px;
             color: $white;
-
         }
 
         &__btn {
-
             background-color: $primary-color;
             padding: 14px 2rem;
             border: none;
@@ -42,7 +38,35 @@
             line-height: 150%;
             font-weight: $fw-semibold;
             cursor: pointer;
+        }
 
+        @include smallDesktop {
+            &__title {
+                font-size: $fs-5xl;
+                padding-bottom: 1.25rem;
+            }
+
+            &__desc {
+                padding-bottom: 32px;
+            }
+        }
+
+        @include tablet {
+            &__title {
+                font-size: $fs-5xl - 10;
+                padding-bottom: 1rem;
+            }
+        }
+
+        @include mobile {
+            &__title {
+                font-size: $fs-4xl - 5;
+                padding-bottom: 1rem;
+            }
+
+            &__desc {
+                padding-bottom: 26px;
+            }
         }
     }
 }

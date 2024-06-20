@@ -1,15 +1,24 @@
 import React from "react";
 import styles from "./banner.module.scss";
-const Banner = () => {
+import Link from "next/link";
+
+interface bannerData {
+  bannerData: Banner;
+}
+
+const Banner = ({ bannerData }: bannerData) => {
+  const data = bannerData;
+  console.log(bannerData);
   return (
     <div className={`${styles.banner} container-sm`}>
       <div className="banner__wrap">
-        <h2 className="banner__title">Shaping Bathrooms into something more</h2>
-        <p className="banner__desc">
-          Transform Your Bathroom into a Luxurious Oasis - Innovative Design and
-          Quality Products to Create Your Dream Bathroom
-        </p>
-        <button className="banner__btn">Explore Products</button>
+        {data?.title && <h2 className="banner__title">{data?.title}</h2>}
+        {data?.desc && <p className="banner__desc">{data?.desc}</p>}
+        {data?.btn && (
+          <Link href={data?.btn?.href} className="banner__btn">
+            {data?.btn?.text}
+          </Link>
+        )}
       </div>
     </div>
   );

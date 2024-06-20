@@ -2,14 +2,16 @@
 
 .score {
     position: relative;
+    width: 100%;
+    max-width: 1052px;
+    margin: 0 auto;
+
     :global .score {
         &__wrap {
             position: absolute;
-            width: 100%;
-            max-width: 1052px;
-            margin: 0 auto;
+            margin-inline: 1rem;
             background-color: $white;
-            padding: 27px 105px;
+            padding: 27px 69px;
             border-radius: 12px;
             display: flex;
             right: 0;
@@ -17,6 +19,8 @@
             gap: 106px;
             top: -75px;
             box-shadow: 0px 9px 34px 0px #0000001a;
+            justify-content: center;
+            align-items: center;
         }
 
         &__items {
@@ -26,12 +30,64 @@
             align-items: center;
             gap: 8px;
         }
+
         &__heading {
             color: $secondary-color;
         }
-        &__cont {
+
+        &__subheading {
             color: rgb($black, 80%);
             padding-bottom: 4px;
+        }
+
+        @include smallDesktop {
+
+            &__subheading {
+                font-size: $fs-md - 1;
+            }
+        }
+
+        @include tablet {
+            &__wrap {
+                gap: 80px;
+                padding: 19px 0;
+            }
+
+            &__items {
+                align-items: flex-start;
+            }
+
+            &__heading {
+                color: $secondary-color;
+                font-size: $fs-4xl + 8;
+            }
+        }
+
+        @include mobileLandscape {
+            &__wrap {
+                gap: 50px;
+                padding: 20px 0;
+            }
+
+            &__items {
+                align-items: flex-start;
+            }
+
+            &__heading {
+                color: $secondary-color;
+                font-size: $fs-4xl - 2;
+            }
+
+            &__subheading {
+                font-size: $fs-md;
+            }
+        }
+
+        @include mobile {
+            &__wrap {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
         }
     }
 }

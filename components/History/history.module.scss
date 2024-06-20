@@ -4,11 +4,12 @@
     :global .history {
         &__wrap {
             width: 100%;
-            max-width: 1215px;
+            max-width: 1247px;
             margin-block: 150px;
             display: flex;
             gap: 52px;
             align-items: center;
+            padding-inline: 1rem;
         }
 
         &__left {
@@ -22,8 +23,8 @@
         }
 
         &__right {
-            width: 572px;
-            height: 370px;
+            width: 100%;
+            max-width: 572px;
         }
 
         &__title {
@@ -43,6 +44,31 @@
         &__desc {
             color: rgb($black, 80%);
             font-family: "Raleway";
+        }
+
+        @include tablet {
+            &__wrap {
+                flex-direction: column;
+            }
+        }
+
+        @include mobile {
+            &__wrap {
+                margin-block: 190px 50px;
+            }
+
+            &__title {
+                font-size: $fs-4xl - 2;
+            }
+
+            &__subtitle {
+                font-size: $fs-lg - 1;
+                padding-bottom: 15px;
+            }
+
+            &__desc {
+                font-size: $fs-lg - 1;
+            }
         }
     }
 }
