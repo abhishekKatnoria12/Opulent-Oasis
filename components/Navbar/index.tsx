@@ -3,6 +3,8 @@ import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import Banner from "../Banner";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 interface props {
   props?: {
@@ -30,6 +32,9 @@ const Navbar = ({ props }: props) => {
           </div>
         )}
         <div className="navbar__right">
+          <div className="navbar__hamburger">
+            <FontAwesomeIcon icon={faBars} style={{ color: "#ffffff" }} />
+          </div>
           <ul className="navbar__menu">
             {data?.menu?.map((item, index) => (
               <li key={index} className="navbar__links">

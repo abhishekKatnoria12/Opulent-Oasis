@@ -5,6 +5,13 @@
     background-color: $primary-color;
 
     :global .topNavbar {
+        &__cont {
+            width: 100%;
+            max-width: 1172px;
+            padding-inline: 1rem;
+            margin: auto;
+        }
+
         &__wrap {
             display: flex;
             justify-content: flex-end;
@@ -21,6 +28,20 @@
                 display: inline-block;
                 color: $white;
                 font-weight: $fw-regular;
+            }
+        }
+
+        @include mobile {
+            &__wrap {
+                flex-wrap: wrap;
+                gap: 16px;
+                justify-content: center;
+            }
+
+            &__links {
+                a {
+                    font-size: $fs-sm - 1;
+                }
             }
         }
     }
