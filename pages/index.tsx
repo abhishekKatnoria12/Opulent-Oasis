@@ -40,10 +40,10 @@ const Home = () => {
       <Score props={score} />
       <History props={history} />
       <OurBrands props={ourBrands} />
-      <OurClients props={ourClient} />
-      <OurProjects props={ourProjects} />
+      {/* <OurClients props={ourClient} /> */}
+      {/* <OurProjects props={ourProjects} /> */}
       <FAQ props={Faqs} />
-      <Contact props={contact} />
+      {/* <Contact props={contact} /> */}
       <Footer props={footer}/>
     </main>
   );

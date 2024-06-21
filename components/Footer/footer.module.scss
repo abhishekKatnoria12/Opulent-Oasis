@@ -1,15 +1,17 @@
 @import "../../styles/assets/scss/sass-loader.scss";
 
 .footer {
+    background-color: $primary-color;
+
     :global .footer {
         &__cont {
-            background-color: $primary-color;
+            max-width: 1140px;
+            margin: auto;
+            padding-inline: 1rem;
         }
 
         &__wrap {
             width: 100%;
-            max-width: 1140px;
-            margin: auto;
             padding-block: 83px;
             display: flex;
             gap: 223px;
@@ -86,6 +88,7 @@
         &__menus {
             display: flex;
             gap: 62px;
+            flex-wrap: wrap;
         }
 
         &__links-wrap {
@@ -96,6 +99,51 @@
             color: $white;
             font-size: $fs-md;
             opacity: 70%;
+        }
+
+        @include smallDesktop {
+            &__wrap {
+                padding-block: 60px;
+                gap: 150px;
+            }
+        }
+
+        @include tablet {
+            &__wrap {
+                padding-block: 50px;
+                gap: 135px;
+            }
+
+            &__menus {
+                gap: 45px;
+            }
+        }
+
+        @include allMobile {
+            &__wrap {
+                gap: 85px;
+                flex-direction: column;
+            }
+
+            &__menus {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                gap: 20px;
+            }
+
+            &__title {
+                font-size: $fs-2xl - 2;
+            }
+        }
+
+        @include mobile {
+            &__wrap {
+                gap: 57px;
+            }
+
+            &__logo-text {
+                font-size: $fs-2xl - 2;
+            }
         }
     }
 }
