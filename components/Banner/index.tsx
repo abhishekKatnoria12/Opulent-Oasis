@@ -8,7 +8,6 @@ interface bannerData {
 
 const Banner = ({ bannerData }: bannerData) => {
   const data = bannerData;
-  console.log(bannerData);
   return (
     <div className={`${styles.banner} container-sm`}>
       <div className="banner__wrap">
