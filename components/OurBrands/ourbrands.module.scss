@@ -2,12 +2,16 @@
 
 .ourbrands {
     :global .ourbrands {
-        &__wrap {
-            width: 100%;
-            background-color: $background-color;
+        &__cont {
             max-width: 1300px;
+            width: 100%;
             margin: auto;
+            padding-inline: 1rem;
             margin-block: 150px;
+        }
+
+        &__wrap {
+            background-color: $background-color;
             display: flex;
             gap: 179px;
             padding: 59px 80px;
@@ -22,7 +26,7 @@
 
             &::before {
                 content: "";
-                background-color: #FFFFFF;
+                background-color: #ffffff;
                 filter: blur(35px);
                 width: 330px;
                 height: 144px;
@@ -56,6 +60,39 @@
 
             &__logo {
                 object-fit: cover;
+            }
+        }
+
+        @include smallDesktop {
+            &__wrap {
+                gap: 100px;
+            }
+        }
+
+        @include tablet {
+            &__cont {
+                margin-block: 50px;
+            }
+            &__wrap {
+                flex-direction: column;
+                gap: 50px;
+            }
+            &__content {
+                text-align: center;
+            }
+            &__title {
+                font-size: $fs-5xl - 10;
+            }
+        }
+
+        @include mobile {
+            &__wrap {
+                gap: 30px;  
+                padding: 36px 49px;
+            }
+
+            &__title {
+                font-size: $fs-4xl - 4;
             }
         }
     }

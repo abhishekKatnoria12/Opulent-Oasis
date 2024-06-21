@@ -9,6 +9,7 @@ const OurBrands = ({ props }: props) => {
   const data = props;
   return (
     <div className={`${styles.ourbrands} continer-fluid`}>
+      <div className="ourbrands__cont">
       <div className="ourbrands__wrap">
         <div className="ourbrands__content">
           <h3
@@ -26,6 +27,7 @@ const OurBrands = ({ props }: props) => {
             className="ourbrands__logo"
           />
         </div>
+      </div>
       </div>
     </div>
   );

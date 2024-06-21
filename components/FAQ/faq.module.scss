@@ -4,9 +4,10 @@
     :global .faq {
         &__cont {
             width: 100%;
-            max-width: 782px;
+            max-width: 814px;
             margin: auto;
             margin-block: 150px;
+            padding-inline: 1rem;
         }
 
         &__wrap {
@@ -60,6 +61,28 @@
             display: flex;
             justify-content: space-between;
             align-self: center;
+        }
+
+        @include tablet {
+            &__cont {
+                margin-block: 50px;
+            }
+            &__heading {
+                font-size: $fs-5xl - 10;
+            }
+            &__desc {
+                padding-bottom: 30px;
+            }
+        }
+
+        @include mobile {
+            &__cont {
+                margin-block: 50px;
+            }
+
+            &__heading {
+                font-size: $fs-4xl - 2;
+            }
         }
     }
 }

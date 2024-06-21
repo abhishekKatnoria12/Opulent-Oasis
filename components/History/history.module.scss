@@ -5,7 +5,7 @@
         &__wrap {
             width: 100%;
             max-width: 1247px;
-            margin-block: 150px;
+            margin-block: 217px 150px;
             display: flex;
             gap: 52px;
             align-items: center;
@@ -47,20 +47,22 @@
         }
 
         @include tablet {
-            &__wrap {
-                flex-direction: column;
-            }
-        }
-
-        @include mobile {
+            
             &__wrap {
                 margin-block: 190px 50px;
+                flex-direction: column;
             }
 
             &__title {
+                font-size: $fs-5xl - 10;
+            }
+        }
+        
+        @include mobile {
+            
+            &__title {
                 font-size: $fs-4xl - 2;
             }
-
             &__subtitle {
                 font-size: $fs-lg - 1;
                 padding-bottom: 15px;
