@@ -7,6 +7,7 @@
             max-width: 1140px;
             margin: auto;
             margin-block: 150px;
+            padding-inline: 1rem;
         }
 
         &__wrap {
@@ -47,7 +48,7 @@
 
         &__form-wrap {
             display: grid;
-            grid-template-columns: repeat(2, auto);
+            grid-template-columns: repeat(2, minmax(100px, auto));
             grid-template-rows: repeat(4, auto);
             gap: 12px;
 
@@ -69,14 +70,16 @@
         &__btn {
             background: $primary-color;
             color: $white;
-            padding: 17px 220px;
+            width: 100%;
+            padding-block: 18px;
+            text-align: center;
             border-radius: 5px;
             margin-top: 40px;
             display: inline-block;
         }
 
         &__input-field {
-            padding: 17px 0 17px 15px;
+            padding: 17px 6px 17px 15px;
             border: none;
             box-shadow: 0px 0px 24px 0px #00000014;
             font-size: $fs-md;
@@ -88,6 +91,93 @@
             font-weight: $fw-regular;
             line-height: 150%;
             color: rgb($black, 80%);
+        }
+
+        @include smallDesktop {
+            &__wrap {
+                gap: 30px;
+            }
+
+            &__title {
+                font-size: $fs-4xl + 8;
+            }
+        }
+
+        @include tablet {
+            &__cont {
+                margin-block: 70px;
+            }
+
+            &__title {
+                font-size: $fs-4xl;
+                padding-bottom: 10px;
+            }
+
+            &__banner {
+                max-width: 55%;
+            }
+
+            &__desc {
+                padding-bottom: 0.75rem;
+                font-size: $fs-md;
+            }
+
+            &__form-wrap {
+                gap: 10px;
+            }
+
+            &__form-cont {
+                max-width: 45%;
+            }
+
+            &__form-tag {
+                gap: 4px;
+            }
+
+            &__label {
+                font-size: $fs-md;
+            }
+
+            &__input-field {
+                padding: 14px 6px 15px 14px;
+            }
+
+            &__btn {
+                margin-top: 16px;
+                padding-block: 15px;
+            }
+        }
+
+        @include allMobile {
+            &__wrap {
+                flex-direction: column;
+            }
+
+            &__banner {
+                max-width: 70%;
+            }
+
+            &__form-cont {
+                max-width: 75%;
+            }
+
+            &__input-field {
+                padding: 17px 6px 17px 15px;
+            }
+        }
+
+        @include mobile {
+            &__banner {
+                max-width: 85%;
+            }
+
+            &__title {
+                font-size: $fs-3xl;
+            }
+
+            &__form-cont {
+                max-width: 90%;
+            }
         }
     }
 }

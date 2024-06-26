@@ -3,10 +3,11 @@
 .project {
   :global .project {
     &__cont {
-      max-width: 1300px;
+      max-width: 1332px;
       width: 100%;
       margin: auto;
       margin-block: 150px;
+      padding-inline: 1rem;
     }
 
     &__wrap {
@@ -36,7 +37,7 @@
 
     &__img {
       width: 100%;
-      max-width: 330px;
+      max-width: 100%;
       padding-bottom: 1rem;
     }
 
@@ -94,7 +95,10 @@
       }
 
       & .slick-slide {
-        padding-right: 20px;
+        padding-inline: 10px;
+      }
+      & .slick-list {
+        margin-inline: -10px;
       }
 
       & .slick-dots {
@@ -124,13 +128,14 @@
     &__additional {
       display: grid;
       grid-template-columns: repeat(2, auto);
-      gap: 12px;
+      grid-gap: 12px;
     }
 
     &__info {
       display: flex;
       gap: 8px;
-      align-items: center;
+      align-items: flex-start;
+      justify-content: flex-start;
     }
 
     &__image {
@@ -143,6 +148,140 @@
       img {
         display: block;
         aspect-ratio: 1/1;
+      }
+    }
+
+    // Responsive
+    @include smallDesktop {
+      &__wrap {
+        padding: 40px 38px;
+      }
+
+      &__heading {
+        font-size: $fs-4xl + 8;
+      }
+
+      &__desc {
+        padding-bottom: 30px;
+      }
+
+      &__subTitle {
+        padding-bottom: 0.75rem;
+      }
+
+      &__subContent {
+        padding-bottom: 18px;
+      }
+
+      &__title {
+        font-size: $fs-xl;
+      }
+      &__client-label {
+        font-size: $fs-xl;
+      }
+
+      &__detail {
+        font-size: $fs-md + 1;
+      }
+
+      &__demo {
+        .slick-prev {
+          left: 62%;
+          top: -115%;
+        }
+
+        .slick-next {
+          right: 3%;
+          top: -15%;
+        }
+
+        & .slick-dots {
+          padding-top: 36px;
+        }
+      }
+    }
+
+    @include tablet {
+      &__cont {
+        margin-block: 70px;
+      }
+      &__wrap {
+        padding: 30px;
+      }
+
+      &__heading {
+        font-size: $fs-4xl;
+      }
+
+      &__desc {
+        padding-bottom: 22px;
+      }
+    }
+
+    @include allMobile {
+      &__wrap {
+        padding: 38px 20px;
+      }
+
+      &__details {
+        padding: 0.75rem;
+      }
+
+      &__client-name {
+        font-size: $fs-md + 1;
+      }
+
+      &__title {
+        font-size: $fs-md + 2;
+      }
+
+      &__subTitle {
+        font-size: $fs-md + 1;
+      }
+      &__client-label {
+        font-size: $fs-md + 1;
+      }
+
+      &__detail {
+        font-size: $fs-md;
+      }
+    }
+
+    @include mobile {
+      &__cont {
+        margin-block: 50px;
+      }
+
+      &__wrap {
+        padding: 22px 15px;
+      }
+
+      &__heading {
+        font-size: $fs-3xl;
+        padding-bottom: 8px;
+      }
+
+      &__subTitle {
+        padding-bottom: 5px;
+      }
+
+      &__desc {
+        padding-bottom: 12px;
+        font-size: $fs-md;
+      }
+
+      &__subContent {
+        padding-bottom: 14px;
+      }
+
+      &__demo {
+        & .slick-dots {
+          padding-top: 12px;
+
+          & ::before {
+            font-size: 10px;
+          }
+        }
       }
     }
   }

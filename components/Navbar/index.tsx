@@ -56,7 +56,7 @@ const Navbar = ({ props }: props) => {
           </ul>
         </div>
       </div>
-      <Banner bannerData={bannerData}/>
+      <Banner bannerData={bannerData} />
     </div>
   );
 };

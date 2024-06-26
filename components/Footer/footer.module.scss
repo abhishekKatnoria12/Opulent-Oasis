@@ -126,9 +126,7 @@
             }
 
             &__menus {
-                display: grid;
-                grid-template-columns: repeat(2, auto);
-                gap: 20px;
+                gap: 78px;
             }
 
             &__title {
@@ -139,6 +137,12 @@
         @include mobile {
             &__wrap {
                 gap: 57px;
+            }
+
+            &__menus {
+                display: grid;
+                grid-template-columns: repeat(2,auto);
+                grid-gap: 20px;
             }
 
             &__logo-text {

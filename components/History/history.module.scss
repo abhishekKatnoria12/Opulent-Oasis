@@ -46,22 +46,31 @@
             font-family: "Raleway";
         }
 
+        @include smallDesktop {
+            &__title {
+                font-size: $fs-5xl - 8;
+            }
+        }
+
         @include tablet {
-            
             &__wrap {
                 margin-block: 190px 50px;
                 flex-direction: column;
+                gap: 30px;
             }
 
             &__title {
-                font-size: $fs-5xl - 10;
+                font-size: $fs-4xl;
+            }
+
+            &__subtitle {
+                padding-bottom: 14px;
             }
         }
-        
+
         @include mobile {
-            
             &__title {
-                font-size: $fs-4xl - 2;
+                font-size: $fs-3xl;
             }
             &__subtitle {
                 font-size: $fs-lg - 1;

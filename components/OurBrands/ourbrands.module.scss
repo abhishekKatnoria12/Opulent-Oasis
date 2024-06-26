@@ -66,33 +66,44 @@
         @include smallDesktop {
             &__wrap {
                 gap: 100px;
+                padding: 34px 40px;
+            }
+
+            &__title {
+                font-size: $fs-4xl + 8;
             }
         }
 
         @include tablet {
             &__cont {
-                margin-block: 50px;
+                margin-block: 70px;
             }
+
             &__wrap {
                 flex-direction: column;
-                gap: 50px;
+                gap: 30px;
+                padding: 34px 28px;
             }
             &__content {
                 text-align: center;
             }
             &__title {
-                font-size: $fs-5xl - 10;
+                font-size: $fs-4xl;
             }
         }
 
         @include mobile {
+            &__cont {
+                margin-block: 50px;
+            }
+
             &__wrap {
-                gap: 30px;  
-                padding: 36px 49px;
+                gap: 20px;
+                padding: 20px;
             }
 
             &__title {
-                font-size: $fs-4xl - 4;
+                font-size: $fs-3xl;
             }
         }
     }

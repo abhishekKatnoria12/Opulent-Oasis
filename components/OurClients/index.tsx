@@ -14,9 +14,12 @@ interface porps {
 const OurClients = ({ props }: porps) => {
   const settings = {
     dots: true,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
   };
 
   const data = props;
@@ -25,7 +28,6 @@ const OurClients = ({ props }: porps) => {
       <div className="ourclient__cont">
         {data?.heading && <h2 className="ourclient__title">{data?.heading}</h2>}
         <div className="ourclient__wrap">
-          <div className="ourclient__vector"></div>
           {data?.testimonials && (
             <>
               <Slider
@@ -49,6 +51,7 @@ const OurClients = ({ props }: porps) => {
                         {items?.identity?.name}
                       </h4>
                       <p className="ourclient__role">{items?.identity?.role}</p>
+                      {/* <div className="ourclient__vector"></div> */}
                       <div className="ourclient__star">
                         <Image
                           src={items?.identity?.star?.src}

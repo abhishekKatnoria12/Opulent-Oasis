@@ -63,15 +63,21 @@
             align-self: center;
         }
 
+        @include smallDesktop {
+            &__heading {
+                font-size: $fs-4xl + 8;
+            }
+        }
+
         @include tablet {
             &__cont {
-                margin-block: 50px;
+                margin-block: 70px;
             }
             &__heading {
-                font-size: $fs-5xl - 10;
+                font-size: $fs-4xl;
             }
             &__desc {
-                padding-bottom: 30px;
+                padding-bottom: 20px;
             }
         }
 
@@ -81,7 +87,7 @@
             }
 
             &__heading {
-                font-size: $fs-4xl - 2;
+                font-size: $fs-3xl;
             }
         }
     }

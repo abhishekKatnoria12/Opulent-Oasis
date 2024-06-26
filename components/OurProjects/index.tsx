@@ -15,8 +15,32 @@ const OurProjects = ({ props }: props) => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     arrows: true,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+        },
+      },
+    ],
   };
   const data = props;
   return (
@@ -67,7 +91,7 @@ const OurProjects = ({ props }: props) => {
                             alt={item?.icon?.alt}
                           />
                         </div>
-                        <p>{item?.text}</p>
+                        <p className="project__detail">{item?.text}</p>
                       </div>
                     ))}
                   </div>
