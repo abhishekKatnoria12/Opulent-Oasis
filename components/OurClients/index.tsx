@@ -44,13 +44,11 @@ const OurClients = ({ props }: porps) => {
                         className="ourclient__img"
                       />
                     </div>
-
                     <div className="ourclient__review">
                       <h4 className="ourclient__name">
                         {items?.identity?.name}
                       </h4>
                       <p className="ourclient__role">{items?.identity?.role}</p>
-                      {/* <div className="ourclient__vector"></div> */}
                       <div className="ourclient__star">
                         <Image
                           src={items?.identity?.star?.src}
