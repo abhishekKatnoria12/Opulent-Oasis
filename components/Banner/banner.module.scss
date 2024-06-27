@@ -2,6 +2,13 @@
 
 .banner {
     :global .banner {
+        &__cont {
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 800px;
+        }
+
         &__wrap {
             width: 100%;
             max-width: 721px;
@@ -10,8 +17,8 @@
             margin: auto;
             align-items: center;
             flex-direction: column;
-            margin-block: 109px 202px;
             padding-inline: 1rem;
+            margin-block: 109px 202px;
         }
 
         &__title {
@@ -41,6 +48,11 @@
         }
 
         @include smallDesktop {
+
+            &__cont {
+                min-height: 650px;
+            }
+
             &__title {
                 font-size: $fs-5xl;
                 padding-bottom: 1.25rem;
@@ -56,9 +68,29 @@
                 font-size: $fs-5xl - 10;
                 padding-bottom: 1rem;
             }
+
+            &__cont {
+                min-height: 600px;
+            }
+        }
+
+        @include allMobile {
+
+            &__wrap {
+                margin-block: 90px 0;
+            }
         }
 
         @include mobile {
+
+            &__cont {
+                min-height: 500px;
+            }
+
+            &__wrap {
+                margin-block: 48px 20px;
+            }
+
             &__title {
                 font-size: $fs-4xl - 5;
                 padding-bottom: 1rem;

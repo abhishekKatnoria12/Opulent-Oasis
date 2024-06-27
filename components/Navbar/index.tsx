@@ -1,3 +1,4 @@
+
 import React from "react";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
@@ -56,7 +57,6 @@ const Navbar = ({ props }: props) => {
           </ul>
         </div>
       </div>
-      <Banner bannerData={bannerData} />
     </div>
   );
 };

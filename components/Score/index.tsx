@@ -9,6 +9,8 @@ const Score = ({ props }: props) => {
   const data = props;
   return (
     <div className={`${styles.score} container-sm`}>
+      <div className="score__demo">
+      <div className="score__cont">
       <div className="score__wrap">
         {data?.map((items, index) => (
           <div className="score__items" key={index}>
@@ -17,6 +19,7 @@ const Score = ({ props }: props) => {
           </div>
         ))}
       </div>
+    </div></div>
     </div>
   );
 };

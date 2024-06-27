@@ -146,7 +146,6 @@
         }
 
         @include mobile {
-
             &__cont {
                 margin-block: 50px;
             }
@@ -163,15 +162,16 @@
                 &::before {
                     width: 34px;
                     height: 30px;
+                    top: 130px;
                 }
             }
 
             &__demo {
-                & .slick-dots  {
+                & .slick-dots {
                     & ::before {
-                    font-size: 10px;
+                        font-size: 10px;
+                    }
                 }
-            }
             }
 
             &__name {
@@ -180,6 +180,10 @@
 
             &__desc {
                 font-size: $fs-md;
+            }
+
+            &__logo {
+                max-width: 70px;
             }
         }
     }

@@ -123,5 +123,6 @@ declare interface copyRightProps {
 }
 
 declare interface Banner extends Content {
+  banners_bg: PImage;
   btn: Button;
 }

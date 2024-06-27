@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 
 import {
   Faqs,
+  bannerData,
   contact,
   footer,
   history,
@@ -25,6 +26,7 @@ import OurProjects from "@/components/OurProjects";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Banner from "@/components/Banner";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -36,7 +38,7 @@ const Home = () => {
   return (
     <main className={`${jakarta.variable}`}>
       <TopNavBar props={topNav} />
-      <Navbar props={navbar} />
+      <Banner props={bannerData}/>
       <Score props={score} />
       <History props={history} />
       <OurBrands props={ourBrands} />

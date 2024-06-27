@@ -7,20 +7,32 @@
     margin: 0 auto;
 
     :global .score {
-        &__wrap {
+        &__demo {
+            padding-inline: 1rem;
             position: absolute;
-            margin-inline: 1rem;
-            background-color: $white;
-            padding: 27px 69px;
-            border-radius: 12px;
-            display: flex;
             right: 0;
             left: 0;
-            gap: 106px;
             top: -75px;
+        }
+
+        &__cont {
+            width: 100%;
+            margin-inline: auto;
+            background-color: $white;
             box-shadow: 0px 9px 34px 0px #0000001a;
+            border-radius: 12px;
+        }
+
+        &__wrap {
+            gap: 106px;
+            width: 100%;
+            max-width: 873px;
+            padding-inline: 1rem;
+            padding-block: 27px;
+            display: flex;
             justify-content: center;
             align-items: center;
+            margin: auto;
         }
 
         &__items {
@@ -41,52 +53,58 @@
         }
 
         @include smallDesktop {
-
-            &__subheading {
-                font-size: $fs-md - 1;
+            &__demo {
+                top: -53px;
             }
-        }
 
-        @include tablet {
             &__wrap {
-                gap: 80px;
-                padding: 19px 0;
-            }
-
-            &__items {
-                align-items: flex-start;
+                gap: 75px;
+                padding-block: 18px;
             }
 
             &__heading {
-                color: $secondary-color;
                 font-size: $fs-4xl + 8;
             }
         }
 
-        @include mobileLandscape {
-            &__wrap {
-                gap: 50px;
-                padding: 20px 0;
-            }
-
-            &__items {
-                align-items: flex-start;
-            }
-
+        @include tablet {
             &__heading {
-                color: $secondary-color;
-                font-size: $fs-4xl - 2;
+                font-size: $fs-4xl;
             }
 
             &__subheading {
+                text-align: center;
                 font-size: $fs-md;
             }
         }
 
+        @include allMobile {
+            &__wrap {
+                gap: 30px;
+                padding-block: 10px;
+            }
+            
+            &__items {
+               gap: 4px;
+            } 
+
+            &__banner {
+                padding: 13px 1.25rem;
+                font-size: $fs-md;
+            }
+        }
+        
         @include mobile {
             &__wrap {
-                gap: 20px;
-                flex-wrap: wrap;
+                gap: 16px;
+            }
+            &__heading {
+                font-size: $fs-3xl;
+            }
+
+            &__subheading {
+                font-size: $fs-sm;
+                padding-bottom: 0;
             }
         }
     }

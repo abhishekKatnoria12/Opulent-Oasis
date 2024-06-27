@@ -32,6 +32,10 @@
         }
 
         @include mobile {
+            &__cont {
+                padding-inline: 0.25rem;
+            }
+
             &__wrap {
                 flex-wrap: wrap;
                 gap: 16px;

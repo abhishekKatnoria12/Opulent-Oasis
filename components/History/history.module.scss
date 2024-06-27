@@ -5,7 +5,7 @@
         &__wrap {
             width: 100%;
             max-width: 1247px;
-            margin-block: 217px 150px;
+            margin-block: 150px;
             display: flex;
             gap: 52px;
             align-items: center;
@@ -54,7 +54,7 @@
 
         @include tablet {
             &__wrap {
-                margin-block: 190px 50px;
+                margin-block: 100px 50px;
                 flex-direction: column;
                 gap: 30px;
             }
@@ -72,6 +72,7 @@
             &__title {
                 font-size: $fs-3xl;
             }
+
             &__subtitle {
                 font-size: $fs-lg - 1;
                 padding-bottom: 15px;

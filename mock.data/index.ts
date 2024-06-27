@@ -60,6 +60,12 @@ export const navbar = {
 };
 
 export const bannerData = {
+  banners_bg: {
+    src: "/banner_bg-image.webp",
+    height: 768,
+    width: 1000,
+    alt: "logo",
+  },
   title:"Shaping Bathrooms into something more",
   desc:"Transform Your Bathroom into a Luxurious Oasis - Innovative Design and Quality Products to Create Your Dream Bathroom",
   btn:{
