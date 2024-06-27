@@ -1,13 +1,9 @@
-
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import Banner from "../Banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { bannerData } from "@/mock.data";
-
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 interface props {
   props?: {
     image?: PImage;
@@ -17,6 +13,10 @@ interface props {
 }
 
 const Navbar = ({ props }: props) => {
+  const [isActive, setIsActive] = useState(false);
+  const handleLogo: () => void = () => {
+    setIsActive(!isActive);
+  };
   const data = props;
   return (
     <div className={`${styles.navbar} .continer-fluid`}>
@@ -34,10 +34,22 @@ const Navbar = ({ props }: props) => {
           </div>
         )}
         <div className="navbar__right">
-          <div className="navbar__hamburger">
-            <FontAwesomeIcon icon={faBars} style={{ color: "#ffffff" }} />
+          <div className="navbar__hamburger" onClick={handleLogo}>
+            {isActive === true ? (
+              <FontAwesomeIcon
+                icon={faXmark}
+                style={{ color: "#ffffff" }}
+                size="xl"
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon={faBars}
+                style={{ color: "#ffffff" }}
+                size="xl"
+              />
+            )}
           </div>
-          <ul className="navbar__menu">
+          <ul className={`navbar__menu ${isActive ? "is-open" : ""}`}>
             {data?.menu?.map((item, index) => (
               <li key={index} className="navbar__links">
                 <Link href={item?.href}>{item?.text}</Link>

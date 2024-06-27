@@ -1,8 +1,6 @@
 @import "../../styles/assets/scss/sass-loader.scss";
 
 .navbar {
- 
-
     :global .navbar {
         &__wrap {
             padding-block: 11px;
@@ -89,12 +87,48 @@
 
         @include allMobile {
             &__hamburger {
-                display: block;
-                font-size: $fs-2xl;
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            &__links {
+                a {
+                    font-weight: $fw-semibold;
+                    font-size: $fs-2xl;
+                    color: $black;
+                }
             }
 
             &__menu {
-                display: none;
+                visibility: hidden;
+                opacity: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width:  100%;
+                max-width: 350px;
+                background-color: $white;
+                padding: 30px 0 0 40px;
+                z-index: 10;
+                transform: translateX(-100%);
+                transition:
+                    transform 0.5s ease-in-out,
+                    visibility 0.5s,
+                    opacity 0.5s;
+            }
+
+            &__arrow {
+                filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(2232%) hue-rotate(209deg) brightness(93%) contrast(89%);
+            }
+
+            &__menu.is-open {
+                visibility: visible;
+                opacity: 1;
+                transform: translateX(0);
             }
         }
 
@@ -106,6 +140,19 @@
             &__img {
                 width: 80%;
             }
+
+            &__menu.is-open {
+                width: 300px;
+            }
+
+            &__links {
+
+                a {
+                    font-size: $fs-lg;
+                }
+            }
+
+
         }
     }
 }
