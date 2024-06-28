@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = never;
+type HomeDocumentDataSlicesSlice = HeroSlice;
 
 /**
  * Content for Home documents
@@ -68,6 +68,76 @@ export type HomeDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomeDocument;
 
 /**
+ * Item in *Hero → Default → Primary → Button*
+ */
+export interface HeroSliceDefaultPrimaryButtonItem {
+  /**
+   * Button Text field in *Hero → Default → Primary → Button*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.button[].buttonText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttonText: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Hero → Default → Primary → Button*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.button[].buttonLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonLink: prismic.LinkField;
+}
+
+/**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Background Image field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.BackgroundImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  BackgroundImage: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.button[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  button: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryButtonItem>>;
+}
+
+/**
  * Default variation for Hero Slice
  *
  * - **API ID**: `default`
@@ -76,7 +146,7 @@ export type AllDocumentTypes = HomeDocument;
  */
 export type HeroSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<HeroSliceDefaultPrimary>,
   never
 >;
 
@@ -109,6 +179,8 @@ declare module "@prismicio/client" {
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
       HeroSlice,
+      HeroSliceDefaultPrimaryButtonItem,
+      HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
     };

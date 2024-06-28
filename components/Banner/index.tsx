@@ -26,7 +26,6 @@ const Banner = ({ props }: props) => {
             : "",
         }}
       >
-        <Navbar props={navbar} />
         <div className="banner__wrap">
           {data?.title && <h2 className="banner__title">{data?.title}</h2>}
           {data?.desc && <p className="banner__desc">{data?.desc}</p>}

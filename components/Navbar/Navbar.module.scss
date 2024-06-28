@@ -1,6 +1,8 @@
 @import "../../styles/assets/scss/sass-loader.scss";
 
 .navbar {
+    width: 100%;
+    position: absolute;
     :global .navbar {
         &__wrap {
             padding-block: 11px;
