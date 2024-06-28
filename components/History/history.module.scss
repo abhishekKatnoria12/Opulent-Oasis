@@ -50,7 +50,9 @@
 
         @include smallDesktop {
             &__title {
-                font-size: $fs-5xl - 8;
+                h2 {
+                    font-size: $fs-5xl - 8;
+                }
             }
         }
 
@@ -62,7 +64,9 @@
             }
 
             &__title {
-                font-size: $fs-4xl;
+                h2 {
+                    font-size: $fs-4xl;
+                }
             }
 
             &__subtitle {
@@ -72,7 +76,9 @@
 
         @include mobile {
             &__title {
-                font-size: $fs-3xl;
+                h2 {
+                    font-size: $fs-3xl;
+                }
             }
 
             &__subtitle {

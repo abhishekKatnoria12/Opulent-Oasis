@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = HistorySlice | ScoreSlice | HeroSlice;
+type HomeDocumentDataSlicesSlice =
+  | OurBrandSlice
+  | HistorySlice
+  | ScoreSlice
+  | HeroSlice;
 
 /**
  * Content for Home documents
@@ -230,6 +234,71 @@ export type HistorySlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *OurBrand → Default → Primary*
+ */
+export interface OurBrandSliceDefaultPrimary {
+  /**
+   * Title field in *OurBrand → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_brand.default.primary.Title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Title: prismic.RichTextField;
+
+  /**
+   * Description field in *OurBrand → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_brand.default.primary.Description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Description: prismic.RichTextField;
+
+  /**
+   * Background Image field in *OurBrand → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_brand.default.primary.BackgroundImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  BackgroundImage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for OurBrand Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurBrandSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OurBrandSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *OurBrand*
+ */
+type OurBrandSliceVariation = OurBrandSliceDefault;
+
+/**
+ * OurBrand Shared Slice
+ *
+ * - **API ID**: `our_brand`
+ * - **Description**: OurBrand
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurBrandSlice = prismic.SharedSlice<
+  "our_brand",
+  OurBrandSliceVariation
+>;
+
+/**
  * Item in *Score → Default → Primary → Score*
  */
 export interface ScoreSliceDefaultPrimaryScoreItem {
@@ -319,6 +388,10 @@ declare module "@prismicio/client" {
       HistorySliceDefaultPrimary,
       HistorySliceVariation,
       HistorySliceDefault,
+      OurBrandSlice,
+      OurBrandSliceDefaultPrimary,
+      OurBrandSliceVariation,
+      OurBrandSliceDefault,
       ScoreSlice,
       ScoreSliceDefaultPrimaryScoreItem,
       ScoreSliceDefaultPrimary,
