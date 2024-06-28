@@ -1,0 +1,54 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"BackgroundImage": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+					"width": 4480,
+					"height": 4480
+				},
+				"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+				"width": 4480,
+				"height": 4480,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"Title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In ad laborum adipisicing excepteur enim veniam tempor sunt aliquip ex voluptate. Exercitation aute excepteur irure pariatur amet ad culpa nostrud mollit. Est ipsum mollit commodo fugiat nisi sit eu."
+						}
+					}
+				]
+			},
+			"Description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis sint sunt dolore adipisicing cillum sit commodo fugiat reprehenderit. Duis voluptate commodo consectetur commodo nostrud voluptate nostrud. Officia cupidatat et aliquip et reprehenderit quis proident."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -1,6 +1,6 @@
 {
   "format": "page",
-  "id": "home",
+  "id": "Home",
   "label": "Home",
   "repeatable": false,
   "status": true,
@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "history": {
+              "type": "SharedSlice"
+            },
+            "score": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

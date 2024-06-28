@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = HeroSlice;
+type HomeDocumentDataSlicesSlice = HistorySlice | ScoreSlice | HeroSlice;
 
 /**
  * Content for Home documents
@@ -15,7 +15,7 @@ interface HomeDocumentData {
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.slices[]
+   * - **API ID Path**: Home.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
@@ -24,7 +24,7 @@ interface HomeDocumentData {
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: home.meta_title
+   * - **API ID Path**: Home.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
@@ -35,7 +35,7 @@ interface HomeDocumentData {
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: home.meta_description
+   * - **API ID Path**: Home.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
@@ -46,7 +46,7 @@ interface HomeDocumentData {
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.meta_image
+   * - **API ID Path**: Home.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
@@ -56,14 +56,14 @@ interface HomeDocumentData {
 /**
  * Home document from Prismic
  *
- * - **API ID**: `home`
+ * - **API ID**: `Home`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "Home", Lang>;
 
 export type AllDocumentTypes = HomeDocument;
 
@@ -72,24 +72,24 @@ export type AllDocumentTypes = HomeDocument;
  */
 export interface HeroSliceDefaultPrimaryButtonItem {
   /**
-   * Button Text field in *Hero → Default → Primary → Button*
+   * Label  field in *Hero → Default → Primary → Button*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.button[].buttonText
+   * - **API ID Path**: hero.default.primary.Button[].Label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  buttonText: prismic.KeyTextField;
+  Label: prismic.KeyTextField;
 
   /**
    * Button Link field in *Hero → Default → Primary → Button*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.button[].buttonLink
+   * - **API ID Path**: hero.default.primary.Button[].ButtonLink
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  buttonLink: prismic.LinkField;
+  ButtonLink: prismic.LinkField;
 }
 
 /**
@@ -111,30 +111,30 @@ export interface HeroSliceDefaultPrimary {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.heading
+   * - **API ID Path**: hero.default.primary.Heading
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  heading: prismic.KeyTextField;
+  Heading: prismic.KeyTextField;
 
   /**
    * Description field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.description
+   * - **API ID Path**: hero.default.primary.Description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  description: prismic.RichTextField;
+  Description: prismic.RichTextField;
 
   /**
    * Button field in *Hero → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.button[]
+   * - **API ID Path**: hero.default.primary.Button[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  button: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryButtonItem>>;
+  Button: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryButtonItem>>;
 }
 
 /**
@@ -164,6 +164,138 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *History → Default → Primary*
+ */
+export interface HistorySliceDefaultPrimary {
+  /**
+   * Background Image field in *History → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: history.default.primary.BackgroundImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  BackgroundImage: prismic.ImageField<never>;
+
+  /**
+   * Title field in *History → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: history.default.primary.Title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Title: prismic.RichTextField;
+
+  /**
+   * Description field in *History → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: history.default.primary.Description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for History Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HistorySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HistorySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *History*
+ */
+type HistorySliceVariation = HistorySliceDefault;
+
+/**
+ * History Shared Slice
+ *
+ * - **API ID**: `history`
+ * - **Description**: History
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HistorySlice = prismic.SharedSlice<
+  "history",
+  HistorySliceVariation
+>;
+
+/**
+ * Item in *Score → Default → Primary → Score*
+ */
+export interface ScoreSliceDefaultPrimaryScoreItem {
+  /**
+   * Heading field in *Score → Default → Primary → Score*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: score.default.primary.Score[].Heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Heading: prismic.KeyTextField;
+
+  /**
+   * Sub Heading field in *Score → Default → Primary → Score*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: score.default.primary.Score[].SubHeading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  SubHeading: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Score → Default → Primary*
+ */
+export interface ScoreSliceDefaultPrimary {
+  /**
+   * Score field in *Score → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: score.default.primary.Score[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  Score: prismic.GroupField<Simplify<ScoreSliceDefaultPrimaryScoreItem>>;
+}
+
+/**
+ * Default variation for Score Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ScoreSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ScoreSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Score*
+ */
+type ScoreSliceVariation = ScoreSliceDefault;
+
+/**
+ * Score Shared Slice
+ *
+ * - **API ID**: `score`
+ * - **Description**: Score
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ScoreSlice = prismic.SharedSlice<"score", ScoreSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -183,6 +315,15 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HistorySlice,
+      HistorySliceDefaultPrimary,
+      HistorySliceVariation,
+      HistorySliceDefault,
+      ScoreSlice,
+      ScoreSliceDefaultPrimaryScoreItem,
+      ScoreSliceDefaultPrimary,
+      ScoreSliceVariation,
+      ScoreSliceDefault,
     };
   }
 }

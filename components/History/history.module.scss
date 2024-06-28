@@ -28,11 +28,13 @@
         }
 
         &__title {
-            color: $black;
-            padding-bottom: 12px;
+            h2 {
+                color: $black;
+                padding-bottom: 12px;
 
-            span {
-                color: $primary-color;
+                span {
+                    color: $primary-color;
+                }
             }
         }
 

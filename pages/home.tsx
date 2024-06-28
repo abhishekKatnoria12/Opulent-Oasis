@@ -3,7 +3,7 @@ import Head from "next/head";
 import { isFilled } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 
-import { components } from "@/slices";
+import { components } from "@/slices/index";
 import { createClient } from "@/prismicio";
 
 export default function Page({
@@ -28,7 +28,7 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
   const client = createClient({ previewData });
 
   // The query fetches the page's data based on the current URL.
-  const page = await client.getSingle("home");
+  const page = await client.getSingle("Home");
 
   return {
     props: { page },

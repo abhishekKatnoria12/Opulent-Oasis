@@ -20,14 +20,14 @@
             "thumbnails": []
           }
         },
-        "heading": {
+        "Heading": {
           "type": "Text",
           "config": {
             "label": "Heading",
             "placeholder": ""
           }
         },
-        "description": {
+        "Description": {
           "type": "StructuredText",
           "config": {
             "label": "Description",
@@ -36,20 +36,20 @@
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "button": {
+        "Button": {
           "type": "Group",
           "config": {
             "label": "Button",
             "repeat": false,
             "fields": {
-              "buttonText": {
+              "Label": {
                 "type": "Text",
                 "config": {
-                  "label": "Button Text",
+                  "label": "Label ",
                   "placeholder": ""
                 }
               },
-              "buttonLink": {
+              "ButtonLink": {
                 "type": "Link",
                 "config": {
                   "label": "Button Link",
