@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | OurClientsSlice
   | OurBrandSlice
   | HistorySlice
   | ScoreSlice
@@ -299,6 +300,118 @@ export type OurBrandSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *OurClients → Default → Primary → Our Clients*
+ */
+export interface OurClientsSliceDefaultPrimaryOurClientsItem {
+  /**
+   * Profile Image field in *OurClients → Default → Primary → Our Clients*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.default.primary.OurClients[].ProfileImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  ProfileImage: prismic.ImageField<never>;
+
+  /**
+   * Name field in *OurClients → Default → Primary → Our Clients*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.default.primary.OurClients[].Name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Name: prismic.RichTextField;
+
+  /**
+   * Occupation field in *OurClients → Default → Primary → Our Clients*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.default.primary.OurClients[].Occupation
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Occupation: prismic.RichTextField;
+
+  /**
+   * Stars field in *OurClients → Default → Primary → Our Clients*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.default.primary.OurClients[].Stars
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  Stars: prismic.ImageField<never>;
+
+  /**
+   * Description field in *OurClients → Default → Primary → Our Clients*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.default.primary.OurClients[].Description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *OurClients → Default → Primary*
+ */
+export interface OurClientsSliceDefaultPrimary {
+  /**
+   * Title field in *OurClients → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.default.primary.Title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Title: prismic.RichTextField;
+
+  /**
+   * Our Clients field in *OurClients → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_clients.default.primary.OurClients[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  OurClients: prismic.GroupField<
+    Simplify<OurClientsSliceDefaultPrimaryOurClientsItem>
+  >;
+}
+
+/**
+ * Default variation for OurClients Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurClientsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OurClientsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *OurClients*
+ */
+type OurClientsSliceVariation = OurClientsSliceDefault;
+
+/**
+ * OurClients Shared Slice
+ *
+ * - **API ID**: `our_clients`
+ * - **Description**: OurClients
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurClientsSlice = prismic.SharedSlice<
+  "our_clients",
+  OurClientsSliceVariation
+>;
+
+/**
  * Item in *Score → Default → Primary → Score*
  */
 export interface ScoreSliceDefaultPrimaryScoreItem {
@@ -392,6 +505,11 @@ declare module "@prismicio/client" {
       OurBrandSliceDefaultPrimary,
       OurBrandSliceVariation,
       OurBrandSliceDefault,
+      OurClientsSlice,
+      OurClientsSliceDefaultPrimaryOurClientsItem,
+      OurClientsSliceDefaultPrimary,
+      OurClientsSliceVariation,
+      OurClientsSliceDefault,
       ScoreSlice,
       ScoreSliceDefaultPrimaryScoreItem,
       ScoreSliceDefaultPrimary,

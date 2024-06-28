@@ -6,5 +6,6 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   history: dynamic(() => import("./History")),
   our_brand: dynamic(() => import("./OurBrand")),
+  our_clients: dynamic(() => import("./OurClients")),
   score: dynamic(() => import("./Score")),
 };

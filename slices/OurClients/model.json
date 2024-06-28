@@ -1,0 +1,83 @@
+{
+  "id": "our_clients",
+  "type": "SharedSlice",
+  "name": "OurClients",
+  "description": "OurClients",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "Title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+            "labels": [
+              "highlight"
+            ]
+          }
+        },
+        "OurClients": {
+          "type": "Group",
+          "config": {
+            "label": "Our Clients",
+            "repeat": true,
+            "fields": {
+              "ProfileImage": {
+                "type": "Image",
+                "config": {
+                  "label": "Profile Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "Name": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Name",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "Occupation": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Occupation",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "Stars": {
+                "type": "Image",
+                "config": {
+                  "label": "Stars",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "Description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
