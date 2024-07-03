@@ -1,0 +1,100 @@
+{
+  "id": "contact",
+  "type": "SharedSlice",
+  "name": "Contact",
+  "description": "Contact",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "ContactImage": {
+          "type": "Image",
+          "config": {
+            "label": "Contact Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "Heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+            "labels": [
+              "highlight"
+            ]
+          }
+        },
+        "SubHeading": {
+          "type": "Text",
+          "config": {
+            "label": "Sub Heading",
+            "placeholder": ""
+          }
+        },
+        "ContactForm": {
+          "type": "Group",
+          "config": {
+            "label": "Contact Form",
+            "repeat": true,
+            "fields": {
+              "Label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label ",
+                  "placeholder": ""
+                }
+              },
+              "Type": {
+                "type": "Text",
+                "config": {
+                  "label": "Type",
+                  "placeholder": ""
+                }
+              },
+              "Placeholder": {
+                "type": "Text",
+                "config": {
+                  "label": "Placeholder",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "Button": {
+          "type": "Group",
+          "config": {
+            "label": "Button",
+            "repeat": true,
+            "fields": {
+              "Href": {
+                "type": "Link",
+                "config": {
+                  "label": "Href",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "Text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -32,11 +32,13 @@
         }
 
         &__title {
-            color: $black;
-            padding-bottom: 12px;
+            h2 {
+                color: $black;
+                padding-bottom: 12px;
 
-            span {
-                color: $primary-color;
+                span {
+                    color: $primary-color;
+                }
             }
         }
 
@@ -99,7 +101,9 @@
             }
 
             &__title {
-                font-size: $fs-4xl + 8;
+                h2 {
+                    font-size: $fs-4xl + 8;
+                }
             }
         }
 
@@ -109,8 +113,10 @@
             }
 
             &__title {
-                font-size: $fs-4xl;
-                padding-bottom: 10px;
+                h2 {
+                    font-size: $fs-4xl;
+                    padding-bottom: 10px;
+                }
             }
 
             &__banner {
@@ -172,7 +178,9 @@
             }
 
             &__title {
-                font-size: $fs-3xl;
+                h2 {
+                    font-size: $fs-3xl;
+                }
             }
 
             &__form-cont {
