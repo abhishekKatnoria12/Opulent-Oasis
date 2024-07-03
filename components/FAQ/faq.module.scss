@@ -15,11 +15,13 @@
         }
 
         &__heading {
-            padding-bottom: 12px;
-            color: $black;
+            h2 {
+                padding-bottom: 12px;
+                color: $black;
 
-            span {
-                color: $primary-color;
+                span {
+                    color: $primary-color;
+                }
             }
         }
 
@@ -42,8 +44,10 @@
         }
 
         &__title {
-            color: $black;
-            font-size: $fs-lg;
+            h5 {
+                color: $black;
+                font-size: $fs-lg;
+            }
         }
 
         &__subTitle {
@@ -65,7 +69,9 @@
 
         @include smallDesktop {
             &__heading {
-                font-size: $fs-4xl + 8;
+                h2 {
+                    font-size: $fs-4xl + 8;
+                }
             }
         }
 
@@ -73,9 +79,13 @@
             &__cont {
                 margin-block: 70px;
             }
+
             &__heading {
-                font-size: $fs-4xl;
+                h2 {
+                    font-size: $fs-4xl;
+                }
             }
+
             &__desc {
                 padding-bottom: 20px;
             }
@@ -87,7 +97,9 @@
             }
 
             &__heading {
-                font-size: $fs-3xl;
+                h2 {
+                    font-size: $fs-3xl;
+                }
             }
         }
     }
