@@ -22,16 +22,21 @@
     }
 
     &__heading {
-      color: $black;
-      padding-bottom: 12px;
+      h2 {
+        color: $black;
+        padding-bottom: 12px;
 
-      span {
-        color: $primary-color;
+        span {
+          color: $primary-color;
+        }
       }
     }
 
     &__desc {
-      color: rgb($black, 80%);
+      p {
+        color: rgb($black, 80%);
+      }
+
       padding-bottom: 52px;
     }
 
@@ -73,6 +78,7 @@
     }
 
     &__demo {
+
       .slick-prev,
       .slick-next {
         z-index: 1;
@@ -97,6 +103,7 @@
       & .slick-slide {
         padding-inline: 10px;
       }
+
       & .slick-list {
         margin-inline: -10px;
       }
@@ -158,11 +165,16 @@
       }
 
       &__heading {
-        font-size: $fs-4xl + 8;
+        h2 {
+          color: $black;
+          font-size: $fs-4xl + 8;
+        }
       }
 
       &__desc {
-        padding-bottom: 30px;
+        p {
+          padding-bottom: 30px;
+        }
       }
 
       &__subTitle {
@@ -176,6 +188,7 @@
       &__title {
         font-size: $fs-xl;
       }
+
       &__client-label {
         font-size: $fs-xl;
       }
@@ -204,16 +217,21 @@
       &__cont {
         margin-block: 70px;
       }
+
       &__wrap {
         padding: 30px;
       }
 
       &__heading {
-        font-size: $fs-4xl;
+        h2 {
+          font-size: $fs-4xl;
+        }
       }
 
       &__desc {
-        padding-bottom: 22px;
+        p {
+          padding-bottom: 22px;
+        }
       }
     }
 
@@ -237,6 +255,7 @@
       &__subTitle {
         font-size: $fs-md + 1;
       }
+
       &__client-label {
         font-size: $fs-md + 1;
       }
@@ -256,7 +275,10 @@
       }
 
       &__heading {
-        font-size: $fs-3xl;
+        h2 {
+          font-size: $fs-3xl;
+        }
+
         padding-bottom: 8px;
       }
 
@@ -266,7 +288,10 @@
 
       &__desc {
         padding-bottom: 12px;
-        font-size: $fs-md;
+
+        p {
+          font-size: $fs-md;
+        }
       }
 
       &__subContent {

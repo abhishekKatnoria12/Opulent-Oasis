@@ -15,7 +15,6 @@ export type ContactProps = SliceComponentProps<Content.ContactSlice>;
 
 const Contact = ({ slice }: ContactProps): JSX.Element => {
   const { primary } = slice;
-  console.log(primary);
   return (
     <div className={`${styles.contact} container-sm`}>
       <div className="contact__cont">
@@ -36,7 +35,11 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
 
             <p className="contact__desc">{primary?.SubHeading}</p>
 
-            <div className="contact__form-wrap">
+            <form
+              method="POST"
+              action="https://getform.io/f/byvppkza"
+              className="contact__form-wrap"
+            >
               {primary?.ContactForm.map((items, index) => (
                 <div key={index} className="contact__form-tag">
                   <label className="contact__label">{items?.Label}</label>
@@ -44,6 +47,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
                     <textarea
                       className="contact__input-field"
                       placeholder={items.Placeholder?.toString()}
+                      name={items.Placeholder?.toString()}
                       rows={2}
                       cols={40}
                     />
@@ -51,22 +55,18 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
                     <input
                       className="contact__input-field"
                       type={items.Type?.toString()}
+                      name={items.Type?.toString()}
                       placeholder={items.Placeholder?.toString()}
                     />
                   )}
                 </div>
               ))}
-            </div>
-
-            {primary?.Button.map((items, indexs) => (
-              <PrismicNextLink
-                field={items?.Href}
-                className="contact__btn"
-                key={indexs}
-              >
-                {items?.Text}
-              </PrismicNextLink>
-            ))}
+              {primary?.Button.map((items, indexs) => (
+                <button className="contact__btn" key={indexs}>
+                  {items?.Text}
+                </button>
+              ))}
+            </form>
           </div>
         </div>
       </div>

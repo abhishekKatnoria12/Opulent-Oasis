@@ -11,7 +11,6 @@ import {
   contact,
   footer,
   history,
-  navbar,
   ourBrands,
   ourClient,
   ourProjects,
@@ -37,17 +36,14 @@ const jakarta = Plus_Jakarta_Sans({
 const Home = () => {
   return (
     <main className={`${jakarta.variable}`}>
-      <TopNavBar props={topNav} />
-      <Navbar props={navbar} />
-      <Banner props={bannerData}/>
+      <Banner props={bannerData} />
       <Score props={score} />
       <History props={history} />
       <OurBrands props={ourBrands} />
       <OurClients props={ourClient} />
       <OurProjects props={ourProjects} />
       <FAQ props={Faqs} />
-      <Contact props={contact} /> 
-      <Footer props={footer}/>
+      <Contact props={contact} />
     </main>
   );
 };

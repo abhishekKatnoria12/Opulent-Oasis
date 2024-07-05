@@ -37,15 +37,21 @@
         }
 
         &__btn {
-            background-color: $primary-color;
+            cursor: pointer;
             padding: 14px 2rem;
             border: none;
+            background-color: $primary-color;
             border-radius: 4px;
             color: $white;
             font-size: $fs-lg;
             line-height: 150%;
             font-weight: $fw-semibold;
-            cursor: pointer;
+            transition: background-color 0.4s, color 0.4s;
+
+            &:hover {
+                background-color: $white;
+                color: $primary-color;
+            }
         }
 
         @include smallDesktop {

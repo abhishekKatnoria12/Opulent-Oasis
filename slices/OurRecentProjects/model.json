@@ -1,0 +1,134 @@
+{
+  "id": "our_recent_projects",
+  "type": "SharedSlice",
+  "name": "OurRecentProjects",
+  "description": "OurRecentProjects",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "Title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+            "labels": [
+              "highlight"
+            ]
+          }
+        },
+        "Description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "Card": {
+          "type": "Group",
+          "config": {
+            "label": "Card",
+            "repeat": true,
+            "fields": {
+              "CoverImage": {
+                "type": "Image",
+                "config": {
+                  "label": "Cover Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "Heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "SubHeading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Sub Heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "Label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": ""
+                }
+              },
+              "Name": {
+                "type": "Text",
+                "config": {
+                  "label": "Name",
+                  "placeholder": ""
+                }
+              },
+              "LocationIcon": {
+                "type": "Image",
+                "config": {
+                  "label": "Location Icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "LocationLabel": {
+                "type": "Text",
+                "config": {
+                  "label": "Location Label",
+                  "placeholder": ""
+                }
+              },
+              "EmployeeIcon": {
+                "type": "Image",
+                "config": {
+                  "label": "Employee Icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "EmployeeLabel": {
+                "type": "Text",
+                "config": {
+                  "label": "Employee Label",
+                  "placeholder": ""
+                }
+              },
+              "SettingIcon": {
+                "type": "Image",
+                "config": {
+                  "label": "Setting Icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "SettingLabel": {
+                "type": "Text",
+                "config": {
+                  "label": "SettingLabel",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

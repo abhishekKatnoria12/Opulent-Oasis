@@ -1,87 +1,140 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import styles from "./footer.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import CopyRight from "../CopyRight";
 import { copyright } from "@/mock.data";
+import { FooterDocument } from "@/prismicio-types";
+import { PrismicNextImage } from "@prismicio/next";
+import { PrismicRichText } from "@prismicio/react";
 
-interface props {
-  props: footerprops;
-}
-const Footer = ({ props }: props) => {
-  const data = props;
+type FooterProps = PropsWithChildren<{ footer: FooterDocument }>;
+
+const Footer = ({ footer }: FooterProps) => {
+  const { data } = footer;
   return (
     <footer className={`${styles.footer} container-full`}>
       <div className="footer__cont">
         <div className="footer__wrap">
           <div className="footer__content">
             <div className="footer__logo">
-              <Image
-                src={data?.footer_logo?.src}
-                width={data?.footer_logo?.width}
-                height={data?.footer_logo?.height}
-                alt={data?.footer_logo?.alt}
+              <PrismicNextImage
+                field={data?.FooterLogo}
                 className="footer__img"
               />
-              {data?.text && (
-                <h2 className="footer__logo-text">{data?.text}</h2>
-              )}
-            </div>
-            {data?.footerContent?.title && (
-              <h5 className="footer__title">{data?.footerContent?.title}</h5>
-            )}
-            {data?.footerContent?.subtitle && (
-              <p className="footer__subtitle">
-                {data?.footerContent?.subtitle}
-              </p>
-            )}
-            {data?.footerContent?.desc && (
-              <span
-                className="footer__desc"
-                dangerouslySetInnerHTML={{
-                  __html: data?.footerContent?.desc || "",
-                }}
-              />
-            )}
-            {data?.footerContent?.footerMedia && (
-              <div className="footer__media">
-                {data?.footerContent?.footerMedia.map((items, index) => (
-                  <div className="footer__media-wrap" key={index}>
-                    <Image
-                      src={items?.src}
-                      width={items?.width}
-                      height={items?.height}
-                      alt={items?.alt}
-                      className="footer__media-logo"
-                    />
-                  </div>
-                ))}
+              <div className="footer__logo-text">
+                <PrismicRichText field={data?.Heading} />
               </div>
-            )}
-          </div>
-          {data?.footerMenu && (
-            <div className="footer__menus">
-              {data?.footerMenu?.map((items, index) => (
-                <div className="footer__menus-items" key={index}>
-                  {items?.heading && (
-                    <h4 className="footer__heading">{items?.heading}</h4>
-                  )}
-                  <ul>
-                    {items.footerLinks?.map((link, linkIndex) => (
-                      <li key={linkIndex} className="footer__links-wrap">
-                        <Link href={link?.href} className="footer__links">
-                          {link?.text}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+            </div>
+            <div className="footer__title">
+              <PrismicRichText field={data?.Title} />
+            </div>
+            <p className="footer__subtitle">{data?.SubTitle}</p>
+            <span className="footer__desc"> {data?.Description}</span>
+            <div className="footer__media">
+              {data?.footer_media.map((items, index) => (
+                <div className="footer__media-wrap" key={index}>
+                  <PrismicNextImage
+                    field={items?.Logo}
+                    className="footer__media-logo"
+                  />
                 </div>
               ))}
             </div>
-          )}
+          </div>
+          <div className="footer__menus">
+            <div className="footer__menus-items">
+              {data?.FooterLink1?.map((items, index) => (
+                <React.Fragment key={index}>
+                  {index === 0 ? (
+                    <div className="footer__heading">
+                      <PrismicRichText field={items?.Label} />
+                    </div>
+                  ) : (
+                    <ul>
+                      <li className="footer__links-wrap">
+                        <Link
+                          href={items?.Href.toString()}
+                          className="footer__links"
+                        >
+                          <PrismicRichText field={items?.Label} />
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+            <div className="footer__menus-items">
+              {data?.FooterLink2?.map((items, index) => (
+                <React.Fragment key={index}>
+                  {index === 0 ? (
+                    <div className="footer__heading">
+                      <PrismicRichText field={items?.Label} />
+                    </div>
+                  ) : (
+                    <ul>
+                      <li className="footer__links-wrap">
+                        <Link
+                          href={items?.Href.toString()}
+                          className="footer__links"
+                        >
+                          <PrismicRichText field={items?.Label} />
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+            <div className="footer__menus-items">
+              {data?.FooterLink3?.map((items, index) => (
+                <React.Fragment key={index}>
+                  {index === 0 ? (
+                    <div className="footer__heading">
+                      <PrismicRichText field={items?.Label} />
+                    </div>
+                  ) : (
+                    <ul>
+                      <li className="footer__links-wrap">
+                        <Link
+                          href={items?.Href.toString()}
+                          className="footer__links"
+                        >
+                          <PrismicRichText field={items?.Label} />
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+            <div className="footer__menus-items">
+              {data?.FooterLink4?.map((items, index) => (
+                <React.Fragment key={index}>
+                  {index === 0 ? (
+                    <div className="footer__heading">
+                      <PrismicRichText field={items?.Label} />
+                    </div>
+                  ) : (
+                    <ul>
+                      <li className="footer__links-wrap">
+                        <Link
+                          href={items?.Href.toString()}
+                          className="footer__links"
+                        >
+                          <PrismicRichText field={items?.Label} />
+                        </Link>
+                      </li>
+                    </ul>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-        <CopyRight props={copyright} />
+      <CopyRight props={copyright} />
     </footer>
   );
 };

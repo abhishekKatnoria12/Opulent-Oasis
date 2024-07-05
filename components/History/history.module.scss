@@ -20,11 +20,25 @@
 
         &__img {
             object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+            &:hover {
+                transform: scale(1.025);
+            }
         }
 
         &__right {
             width: 100%;
             max-width: 572px;
+            transition: transform 0.3s ease;
+            transform-origin: center;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         &__title {

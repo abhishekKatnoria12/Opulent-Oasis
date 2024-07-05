@@ -1,38 +1,32 @@
-import React, { useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-interface props {
-  props?: {
-    image?: PImage;
-    menu?: MenuItem[];
-    button?: Button;
-  };
-}
+import { NavbarDocument } from "@/prismicio-types";
+import { PrismicImage, PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
-const Navbar = ({ props }: props) => {
+type NavbarProps = PropsWithChildren<{ navbar: NavbarDocument }>;
+
+const Navbar = ({ navbar }: NavbarProps) => {
+  const { data } = navbar;
   const [isActive, setIsActive] = useState(false);
+
   const handleLogo: () => void = () => {
     setIsActive(!isActive);
   };
-  const data = props;
+
   return (
     <div className={`${styles.navbar} .continer-fluid`}>
       <div className="navbar__wrap container-sm">
-        {data?.image && (
-          <div className="navbar__left">
-            <Image
-              src={data?.image?.src}
-              width={data?.image?.width}
-              height={data?.image?.height}
-              alt={data?.image?.alt}
-              className="navbar__img"
-            />
-            <h2 className="navbar__title">OpulentOasis</h2>
+        <div className="navbar__left">
+          <PrismicNextImage field={data?.NavbarLogo} className="navbar__img" />
+          <div className="navbar__title">
+            <PrismicRichText field={navbar?.data?.Heading} />
           </div>
-        )}
+        </div>
         <div className="navbar__right">
           <div className="navbar__hamburger" onClick={handleLogo}>
             {isActive === true ? (
@@ -50,10 +44,12 @@ const Navbar = ({ props }: props) => {
             )}
           </div>
           <ul className={`navbar__menu ${isActive ? "is-open" : ""}`}>
-            {data?.menu?.map((item, index) => (
+            {navbar?.data?.Menus?.map((item, index) => (
               <li key={index} className="navbar__links">
-                <Link href={item?.href}>{item?.text}</Link>
-                {item?.submenu && (
+                <PrismicNextLink href={item?.Href.toString()}>
+                  {item?.Label}
+                </PrismicNextLink>
+                {/* {item?.submenu && (
                   <Image
                     loading="lazy"
                     src="/vector.svg"
@@ -62,10 +58,10 @@ const Navbar = ({ props }: props) => {
                     alt=""
                     className="navbar__arrow"
                   />
-                )}
+                )} */}
               </li>
             ))}
-            <button className="navbar__btn">{data?.button?.text}</button>
+            <button className="navbar__btn">{navbar?.data?.Button}</button>
           </ul>
         </div>
       </div>

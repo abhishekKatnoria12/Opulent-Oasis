@@ -1,0 +1,60 @@
+{
+  "format": "custom",
+  "id": "navbar",
+  "label": "Navbar",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "NavbarLogo": {
+        "type": "Image",
+        "config": {
+          "label": "Navbar Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "Heading": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Heading",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "Menus": {
+        "type": "Group",
+        "config": {
+          "label": "Menus ",
+          "repeat": true,
+          "fields": {
+            "Label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "Href": {
+              "type": "Link",
+              "config": {
+                "label": "Href",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "Button": {
+        "type": "Text",
+        "config": {
+          "label": "Button",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

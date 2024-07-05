@@ -24,10 +24,14 @@
         }
 
         &__title {
-            left: 26px;
-            font-size: $fs-2xl;
-            font-weight: 600;
-            position: absolute;
+            h5 {
+                color: $white;
+                left: 28px;
+                bottom: 15px;
+                font-size: $fs-2xl;
+                font-weight: 600;
+                position: absolute;
+            }
         }
 
         &__img {
@@ -45,10 +49,32 @@
             align-items: center;
 
             a {
-                color: rgb($white, 80%);
-                font-size: $fs-lg;
-                font-weight: $fw-medium;
-                line-height: 150%;
+                position: relative;
+                text-decoration: none;
+                color: $white;
+                font-size: $fs-xl;
+                font-weight: $fw-regular;
+                line-height: 130%;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 1px;
+                    bottom: -3px;
+                    left: 0;
+                    background-color: $primary-color;
+                    transform-origin: bottom right;
+                    transition: transform 0.25s ease-out;
+                }
+                &:hover {
+                    color: $primary-color;
+                    &::after {
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+                }
             }
         }
 
@@ -57,6 +83,7 @@
         }
 
         &__btn {
+            cursor: pointer;
             padding: 14px 2rem;
             border: none;
             background-color: $primary-color;
@@ -65,6 +92,14 @@
             font-size: $fs-lg;
             line-height: 150%;
             font-weight: $fw-semibold;
+            transition:
+                background-color 0.3s,
+                color 0.3s;
+
+            &:hover {
+                background-color: $white;
+                color: $primary-color;
+            }
         }
 
         &__hamburger {
@@ -111,7 +146,7 @@
                 top: 0;
                 left: 0;
                 height: 100vh;
-                width:  100%;
+                width: 100%;
                 max-width: 350px;
                 background-color: $white;
                 padding: 30px 0 0 40px;
@@ -124,7 +159,8 @@
             }
 
             &__arrow {
-                filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(2232%) hue-rotate(209deg) brightness(93%) contrast(89%);
+                filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(2232%) hue-rotate(209deg)
+                    brightness(93%) contrast(89%);
             }
 
             &__menu.is-open {
@@ -136,7 +172,9 @@
 
         @include mobile {
             &__title {
-                font-size: $fs-md;
+                h5 {
+                    font-size: $fs-md;
+                }
             }
 
             &__img {
@@ -148,13 +186,10 @@
             }
 
             &__links {
-
                 a {
                     font-size: $fs-lg;
                 }
             }
-
-
         }
     }
 }

@@ -81,19 +81,17 @@ const OurProjects = ({ props }: props) => {
                     </span>
                   </div>
                   <div className="project__additional">
-                    {items?.additionalInfo.map((item, index) => (
                       <div key={index} className="project__info">
                         <div className="project__image">
                           <Image
-                            src={item?.icon?.src}
-                            width={item?.icon?.width}
-                            height={item?.icon?.height}
-                            alt={item?.icon?.alt}
+                            src={items?.icon?.src}
+                            width={items?.icon?.width}
+                            height={items?.icon?.height}
+                            alt={items?.icon?.alt}
                           />
                         </div>
-                        <p className="project__detail">{item?.text}</p>
+                        <p className="project__detail">{items?.text}</p>
                       </div>
-                    ))}
                   </div>
                 </div>
               ))}

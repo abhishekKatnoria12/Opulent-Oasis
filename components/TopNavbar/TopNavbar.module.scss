@@ -23,11 +23,32 @@
             padding-block: 6px;
 
             a {
+                position: relative;
                 font-size: $fs-sm;
                 line-height: 155%;
                 display: inline-block;
                 color: $white;
                 font-weight: $fw-regular;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 1px;
+                    bottom: 0px;
+                    left: 0;
+                    background-color: $white;
+                    transform-origin: bottom right;
+                    transition: transform 0.25s ease-out;
+                }
+
+                &:hover {
+                    &::after {
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+                }
             }
         }
 

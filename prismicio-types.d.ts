@@ -5,6 +5,9 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | ContactSlice
+  | FaqsSlice
+  | OurRecentProjectsSlice
   | OurClientsSlice
   | OurBrandSlice
   | HistorySlice
@@ -70,7 +73,658 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "Home", Lang>;
 
-export type AllDocumentTypes = HomeDocument;
+/**
+ * Item in *Footer → Footer Media*
+ */
+export interface FooterDocumentDataFooterMediaItem {
+  /**
+   * Logo field in *Footer → Footer Media*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_media[].Logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  Logo: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *Footer → Footer Link 1*
+ */
+export interface FooterDocumentDataFooterLink1Item {
+  /**
+   * Href field in *Footer → Footer Link 1*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink1[].Href
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  Href: prismic.LinkField;
+
+  /**
+   * Label  field in *Footer → Footer Link 1*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink1[].Label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Label: prismic.RichTextField;
+}
+
+/**
+ * Item in *Footer → Footer Link 2*
+ */
+export interface FooterDocumentDataFooterLink2Item {
+  /**
+   * Href field in *Footer → Footer Link 2*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink2[].Href
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  Href: prismic.LinkField;
+
+  /**
+   * Label  field in *Footer → Footer Link 2*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink2[].Label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Label: prismic.RichTextField;
+}
+
+/**
+ * Item in *Footer → Footer Link 3*
+ */
+export interface FooterDocumentDataFooterLink3Item {
+  /**
+   * Href field in *Footer → Footer Link 3*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink3[].Href
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  Href: prismic.LinkField;
+
+  /**
+   * Label  field in *Footer → Footer Link 3*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink3[].Label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Label: prismic.RichTextField;
+}
+
+/**
+ * Item in *Footer → Footer Link 4*
+ */
+export interface FooterDocumentDataFooterLink4Item {
+  /**
+   * Href field in *Footer → Footer Link 4*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink4[].Href
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  Href: prismic.LinkField;
+
+  /**
+   * Label  field in *Footer → Footer Link 4*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink4[].Label
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Label: prismic.RichTextField;
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * Footer Logo field in *Footer*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLogo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  FooterLogo: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *Footer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.Heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Heading: prismic.RichTextField;
+
+  /**
+   * Title field in *Footer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.Title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Title: prismic.RichTextField;
+
+  /**
+   * Sub Title field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.SubTitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  SubTitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.Description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Description: prismic.KeyTextField;
+
+  /**
+   * Footer Media field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.footer_media[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  footer_media: prismic.GroupField<Simplify<FooterDocumentDataFooterMediaItem>>;
+
+  /**
+   * Footer Link 1 field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink1[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  FooterLink1: prismic.GroupField<Simplify<FooterDocumentDataFooterLink1Item>>;
+
+  /**
+   * Footer Link 2 field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink2[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  FooterLink2: prismic.GroupField<Simplify<FooterDocumentDataFooterLink2Item>>;
+
+  /**
+   * Footer Link 3 field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink3[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  FooterLink3: prismic.GroupField<Simplify<FooterDocumentDataFooterLink3Item>>;
+
+  /**
+   * Footer Link 4 field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.FooterLink4[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  FooterLink4: prismic.GroupField<Simplify<FooterDocumentDataFooterLink4Item>>;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
+
+/**
+ * Item in *Navbar → Menus *
+ */
+export interface NavbarDocumentDataMenusItem {
+  /**
+   * Label field in *Navbar → Menus *
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.Menus[].Label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Label: prismic.KeyTextField;
+
+  /**
+   * Href field in *Navbar → Menus *
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.Menus[].Href
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  Href: prismic.LinkField;
+}
+
+/**
+ * Content for Navbar documents
+ */
+interface NavbarDocumentData {
+  /**
+   * Navbar Logo field in *Navbar*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.NavbarLogo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  NavbarLogo: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *Navbar*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.Heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Heading: prismic.RichTextField;
+
+  /**
+   * Menus  field in *Navbar*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.Menus[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  Menus: prismic.GroupField<Simplify<NavbarDocumentDataMenusItem>>;
+
+  /**
+   * Button field in *Navbar*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.Button
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Button: prismic.KeyTextField;
+}
+
+/**
+ * Navbar document from Prismic
+ *
+ * - **API ID**: `navbar`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavbarDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavbarDocumentData>,
+    "navbar",
+    Lang
+  >;
+
+/**
+ * Item in *Top Navbar  → TopNavbar*
+ */
+export interface TopNavbarDocumentDataTopNavbarItem {
+  /**
+   * Href field in *Top Navbar  → TopNavbar*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_navbar.TopNavbar[].Href
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  Href: prismic.LinkField;
+
+  /**
+   * Label  field in *Top Navbar  → TopNavbar*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_navbar.TopNavbar[].Label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Label: prismic.KeyTextField;
+}
+
+/**
+ * Content for Top Navbar  documents
+ */
+interface TopNavbarDocumentData {
+  /**
+   * TopNavbar field in *Top Navbar *
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: top_navbar.TopNavbar[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  TopNavbar: prismic.GroupField<Simplify<TopNavbarDocumentDataTopNavbarItem>>;
+}
+
+/**
+ * Top Navbar  document from Prismic
+ *
+ * - **API ID**: `top_navbar`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TopNavbarDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<TopNavbarDocumentData>,
+    "top_navbar",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | HomeDocument
+  | FooterDocument
+  | NavbarDocument
+  | TopNavbarDocument;
+
+/**
+ * Item in *Contact → Default → Primary → Contact Form*
+ */
+export interface ContactSliceDefaultPrimaryContactFormItem {
+  /**
+   * Label  field in *Contact → Default → Primary → Contact Form*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.ContactForm[].Label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Label: prismic.KeyTextField;
+
+  /**
+   * Type field in *Contact → Default → Primary → Contact Form*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.ContactForm[].Type
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Type: prismic.KeyTextField;
+
+  /**
+   * Placeholder field in *Contact → Default → Primary → Contact Form*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.ContactForm[].Placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Placeholder: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Contact → Default → Primary → Button*
+ */
+export interface ContactSliceDefaultPrimaryButtonItem {
+  /**
+   * Href field in *Contact → Default → Primary → Button*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.Button[].Href
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  Href: prismic.LinkField;
+
+  /**
+   * Text field in *Contact → Default → Primary → Button*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.Button[].Text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Text: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Contact → Default → Primary*
+ */
+export interface ContactSliceDefaultPrimary {
+  /**
+   * Contact Image field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.ContactImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  ContactImage: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.Heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Heading: prismic.RichTextField;
+
+  /**
+   * Sub Heading field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.SubHeading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  SubHeading: prismic.KeyTextField;
+
+  /**
+   * Contact Form field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.ContactForm[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  ContactForm: prismic.GroupField<
+    Simplify<ContactSliceDefaultPrimaryContactFormItem>
+  >;
+
+  /**
+   * Button field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.Button[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  Button: prismic.GroupField<Simplify<ContactSliceDefaultPrimaryButtonItem>>;
+}
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
+
+/**
+ * Item in *Faqs → Default → Primary → Content*
+ */
+export interface FaqsSliceDefaultPrimaryContentItem {
+  /**
+   * Title field in *Faqs → Default → Primary → Content*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.default.primary.Content[].Title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Title: prismic.RichTextField;
+
+  /**
+   * Sub Title field in *Faqs → Default → Primary → Content*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.default.primary.Content[].SubTitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  SubTitle: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Faqs → Default → Primary*
+ */
+export interface FaqsSliceDefaultPrimary {
+  /**
+   * Heading field in *Faqs → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.default.primary.Heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Heading: prismic.RichTextField;
+
+  /**
+   * Sub Icon field in *Faqs → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.default.primary.SubIcon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  SubIcon: prismic.ImageField<never>;
+
+  /**
+   * Add Icon field in *Faqs → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.default.primary.AddIcon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  AddIcon: prismic.ImageField<never>;
+
+  /**
+   * Sub Heading field in *Faqs → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.default.primary.SubHeading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  SubHeading: prismic.KeyTextField;
+
+  /**
+   * Content field in *Faqs → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.default.primary.Content[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  Content: prismic.GroupField<Simplify<FaqsSliceDefaultPrimaryContentItem>>;
+}
+
+/**
+ * Default variation for Faqs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Faqs*
+ */
+type FaqsSliceVariation = FaqsSliceDefault;
+
+/**
+ * Faqs Shared Slice
+ *
+ * - **API ID**: `faqs`
+ * - **Description**: Faqs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqsSlice = prismic.SharedSlice<"faqs", FaqsSliceVariation>;
 
 /**
  * Item in *Hero → Default → Primary → Button*
@@ -412,6 +1066,188 @@ export type OurClientsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *OurRecentProjects → Default → Primary → Card*
+ */
+export interface OurRecentProjectsSliceDefaultPrimaryCardItem {
+  /**
+   * Cover Image field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].CoverImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  CoverImage: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].Heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Heading: prismic.RichTextField;
+
+  /**
+   * Sub Heading field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].SubHeading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  SubHeading: prismic.RichTextField;
+
+  /**
+   * Label field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].Label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Label: prismic.KeyTextField;
+
+  /**
+   * Name field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].Name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  Name: prismic.KeyTextField;
+
+  /**
+   * Location Icon field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].LocationIcon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  LocationIcon: prismic.ImageField<never>;
+
+  /**
+   * Location Label field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].LocationLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  LocationLabel: prismic.KeyTextField;
+
+  /**
+   * Employee Icon field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].EmployeeIcon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  EmployeeIcon: prismic.ImageField<never>;
+
+  /**
+   * Employee Label field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].EmployeeLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  EmployeeLabel: prismic.KeyTextField;
+
+  /**
+   * Setting Icon field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].SettingIcon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  SettingIcon: prismic.ImageField<never>;
+
+  /**
+   * SettingLabel field in *OurRecentProjects → Default → Primary → Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[].SettingLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  SettingLabel: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *OurRecentProjects → Default → Primary*
+ */
+export interface OurRecentProjectsSliceDefaultPrimary {
+  /**
+   * Title field in *OurRecentProjects → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Title: prismic.RichTextField;
+
+  /**
+   * Description field in *OurRecentProjects → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Description: prismic.RichTextField;
+
+  /**
+   * Card field in *OurRecentProjects → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_recent_projects.default.primary.Card[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  Card: prismic.GroupField<
+    Simplify<OurRecentProjectsSliceDefaultPrimaryCardItem>
+  >;
+}
+
+/**
+ * Default variation for OurRecentProjects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurRecentProjectsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OurRecentProjectsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *OurRecentProjects*
+ */
+type OurRecentProjectsSliceVariation = OurRecentProjectsSliceDefault;
+
+/**
+ * OurRecentProjects Shared Slice
+ *
+ * - **API ID**: `our_recent_projects`
+ * - **Description**: OurRecentProjects
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurRecentProjectsSlice = prismic.SharedSlice<
+  "our_recent_projects",
+  OurRecentProjectsSliceVariation
+>;
+
+/**
  * Item in *Score → Default → Primary → Score*
  */
 export interface ScoreSliceDefaultPrimaryScoreItem {
@@ -491,7 +1327,31 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataFooterMediaItem,
+      FooterDocumentDataFooterLink1Item,
+      FooterDocumentDataFooterLink2Item,
+      FooterDocumentDataFooterLink3Item,
+      FooterDocumentDataFooterLink4Item,
+      NavbarDocument,
+      NavbarDocumentData,
+      NavbarDocumentDataMenusItem,
+      TopNavbarDocument,
+      TopNavbarDocumentData,
+      TopNavbarDocumentDataTopNavbarItem,
       AllDocumentTypes,
+      ContactSlice,
+      ContactSliceDefaultPrimaryContactFormItem,
+      ContactSliceDefaultPrimaryButtonItem,
+      ContactSliceDefaultPrimary,
+      ContactSliceVariation,
+      ContactSliceDefault,
+      FaqsSlice,
+      FaqsSliceDefaultPrimaryContentItem,
+      FaqsSliceDefaultPrimary,
+      FaqsSliceVariation,
+      FaqsSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryButtonItem,
       HeroSliceDefaultPrimary,
@@ -510,6 +1370,11 @@ declare module "@prismicio/client" {
       OurClientsSliceDefaultPrimary,
       OurClientsSliceVariation,
       OurClientsSliceDefault,
+      OurRecentProjectsSlice,
+      OurRecentProjectsSliceDefaultPrimaryCardItem,
+      OurRecentProjectsSliceDefaultPrimary,
+      OurRecentProjectsSliceVariation,
+      OurRecentProjectsSliceDefault,
       ScoreSlice,
       ScoreSliceDefaultPrimaryScoreItem,
       ScoreSliceDefaultPrimary,

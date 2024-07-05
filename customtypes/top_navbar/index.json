@@ -1,0 +1,35 @@
+{
+  "format": "custom",
+  "id": "top_navbar",
+  "label": "Top Navbar ",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "TopNavbar": {
+        "type": "Group",
+        "config": {
+          "label": "TopNavbar",
+          "repeat": true,
+          "fields": {
+            "Href": {
+              "type": "Link",
+              "config": {
+                "label": "Href",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "Label": {
+              "type": "Text",
+              "config": {
+                "label": "Label ",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

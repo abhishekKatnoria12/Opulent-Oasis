@@ -11,6 +11,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact": {
+              "type": "SharedSlice"
+            },
+            "faqs": {
+              "type": "SharedSlice"
+            },
+            "our_recent_projects": {
+              "type": "SharedSlice"
+            },
             "our_clients": {
               "type": "SharedSlice"
             },

@@ -33,15 +33,47 @@
         }
 
         &__logo-text {
-            left: 30px;
-            bottom: 32px;
-            font-size: $fs-2xl;
-            font-weight: 600;
+            h5 {
+                color: $white;
+                font-weight: $fw-semibold;
+            }
+
+            left: 28px;
+            bottom: 29px;
             position: absolute;
         }
 
+        &__title,
+        &__heading {
+            h5 {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 1px;
+                    bottom: 0px;
+                    left: 0;
+                    background-color: $white;
+                    transform-origin: bottom right;
+                    transition: transform 0.25s ease-out;
+                }
+
+                &:hover {
+                    &::before {
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+                }
+            }
+        }
+
         &__title {
-            color: $white;
+            h5 {
+                color: $white;
+            }
         }
 
         &__subtitle {
@@ -80,9 +112,14 @@
         }
 
         &__heading {
-            color: $white;
-            font-size: $fs-lg;
             padding-bottom: 12px;
+
+            h5 {
+                position: relative;
+                display: inline-block;
+                color: $white;
+                font-size: $fs-lg;
+            }
         }
 
         &__menus {
@@ -91,8 +128,47 @@
             flex-wrap: wrap;
         }
 
+        &__menus-items {
+            ul {
+                li {
+                    a {
+                        position: relative;
+                        font-size: $fs-sm;
+                        line-height: 155%;
+                        display: inline-block;
+                        color: $white;
+                        font-weight: $fw-regular;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            transform: scaleX(0);
+                            height: 1px;
+                            bottom: 0px;
+                            left: 0;
+                            background-color: $white;
+                            transform-origin: bottom right;
+                            transition: transform 0.25s ease-out;
+                        }
+
+                        &:hover {
+                            &::after {
+                                transform: scaleX(1);
+                                transform-origin: bottom left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         &__links-wrap {
             padding-bottom: 6px;
+
+            p {
+                color: $white;
+            }
         }
 
         &__links {
@@ -130,7 +206,9 @@
             }
 
             &__title {
-                font-size: $fs-2xl - 2;
+                h5 {
+                    font-size: $fs-2xl - 2;
+                }
             }
         }
 
@@ -141,12 +219,14 @@
 
             &__menus {
                 display: grid;
-                grid-template-columns: repeat(2,auto);
+                grid-template-columns: repeat(2, auto);
                 grid-gap: 20px;
             }
 
             &__logo-text {
-                font-size: $fs-2xl - 2;
+                h5 {
+                    font-size: $fs-2xl - 2;
+                }
             }
         }
     }

@@ -5,9 +5,13 @@ import { SliceZone } from "@prismicio/react";
 
 import { components } from "@/slices/index";
 import { createClient } from "@/prismicio";
+import Layout from "@/components/Layout";
 
 export default function Page({
   page,
+  navbar,
+  footer,
+  topNavbar,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -17,7 +21,9 @@ export default function Page({
           <meta name="description" content={page.data.meta_description} />
         ) : null}
       </Head>
-      <SliceZone slices={page.data.slices} components={components} />
+      <Layout navbar={navbar} footer={footer} topNavbar={topNavbar}>
+        <SliceZone slices={page.data.slices} components={components} />
+      </Layout>
     </>
   );
 }
@@ -29,8 +35,11 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
 
   // The query fetches the page's data based on the current URL.
   const page = await client.getSingle("Home");
+  const navbar = await client.getSingle("navbar");
+  const footer = await client.getSingle("footer");
+  const topNavbar = await client.getSingle("top_navbar");
 
   return {
-    props: { page },
+    props: { page, navbar, footer, topNavbar },
   };
 }
