@@ -30,7 +30,7 @@ const OurRecentProjects = ({ slice }: OurRecentProjectsProps): JSX.Element => {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
-    // autoplay: true,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 991,
