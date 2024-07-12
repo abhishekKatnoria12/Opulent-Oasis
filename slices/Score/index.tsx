@@ -1,7 +1,6 @@
 import { asText, Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import styles from "../../components/Score/score.module.scss";
-import CountUp from "react-countup";
 
 /**
  * Props for `Score`.
