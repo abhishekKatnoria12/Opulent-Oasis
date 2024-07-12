@@ -2,16 +2,18 @@
 
 .copyright {
     :global .copyright {
-
         &__wrap {
-            border-top: 0.5px solid #F8F8F880;
+            border-top: 0.5px solid #f8f8f880;
+            background-color: $primary-color;
         }
 
         &__title {
-            text-align: center;
-            font-size: $fs-md;
-            padding-block: 20px;
-            color: rgb($white, 80%);
+            h4 {
+                text-align: center;
+                font-size: $fs-md;
+                padding-block: 20px;
+                color: rgb($white, 80%);
+            }
         }
     }
 }

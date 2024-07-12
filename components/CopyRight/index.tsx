@@ -1,18 +1,22 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import styles from "./copyright.module.scss";
+import { CopyRightDocument } from "@/prismicio-types";
+import { PrismicRichText } from "@prismicio/react";
 
-interface props {
-  props: copyRightProps;
-}
-const CopyRight = ({ props }: props) => {
-  const data = props;
+type CopyRightProps = PropsWithChildren<{ copyRight: CopyRightDocument }>;
+const CopyRight = ({ copyRight }: CopyRightProps) => {
+  const { data } = copyRight;
   return (
     <div className={`${styles.copyright} container-full`}>
-      <div className="copyright__cont">
-        <div className="copyright__wrap">
-          <h4 className="copyright__title">{data?.text}</h4>
+      {data?.Heading && (
+        <div className="copyright__cont">
+          <div className="copyright__wrap">
+            <div className="copyright__title">
+              <PrismicRichText field={data?.Heading} />
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

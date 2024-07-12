@@ -12,6 +12,7 @@ export default function Page({
   navbar,
   footer,
   topNavbar,
+  copyRight,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -21,7 +22,7 @@ export default function Page({
           <meta name="description" content={page.data.meta_description} />
         ) : null}
       </Head>
-      <Layout navbar={navbar} footer={footer} topNavbar={topNavbar}>
+      <Layout navbar={navbar} footer={footer} topNavbar={topNavbar} copyRight={copyRight}>
         <SliceZone slices={page.data.slices} components={components} />
       </Layout>
     </>
@@ -38,8 +39,9 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
   const navbar = await client.getSingle("navbar");
   const footer = await client.getSingle("footer");
   const topNavbar = await client.getSingle("top_navbar");
+  const copyRight = await client.getSingle("copy_right");
 
   return {
-    props: { page, navbar, footer, topNavbar },
+    props: { page, navbar, footer, topNavbar, copyRight },
   };
 }

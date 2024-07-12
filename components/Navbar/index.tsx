@@ -24,7 +24,7 @@ const Navbar = ({ navbar }: NavbarProps) => {
         <div className="navbar__left">
           <PrismicNextImage field={data?.NavbarLogo} className="navbar__img" />
           <div className="navbar__title">
-            <PrismicRichText field={navbar?.data?.Heading} />
+            <PrismicRichText field={data?.Heading} />
           </div>
         </div>
         <div className="navbar__right">
@@ -61,7 +61,7 @@ const Navbar = ({ navbar }: NavbarProps) => {
                 )} */}
               </li>
             ))}
-            <button className="navbar__btn">{navbar?.data?.Button}</button>
+            <button className="navbar__btn">{data?.Button}</button>
           </ul>
         </div>
       </div>

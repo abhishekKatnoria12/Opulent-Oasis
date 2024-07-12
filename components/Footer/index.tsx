@@ -134,7 +134,6 @@ const Footer = ({ footer }: FooterProps) => {
           </div>
         </div>
       </div>
-      <CopyRight props={copyright} />
     </footer>
   );
 };

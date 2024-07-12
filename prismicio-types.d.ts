@@ -74,6 +74,38 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "Home", Lang>;
 
 /**
+ * Content for Copy Right documents
+ */
+interface CopyRightDocumentData {
+  /**
+   * Heading field in *Copy Right*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: copy_right.Heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  Heading: prismic.RichTextField;
+}
+
+/**
+ * Copy Right document from Prismic
+ *
+ * - **API ID**: `copy_right`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CopyRightDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CopyRightDocumentData>,
+    "copy_right",
+    Lang
+  >;
+
+/**
  * Item in *Footer → Footer Media*
  */
 export interface FooterDocumentDataFooterMediaItem {
@@ -468,6 +500,7 @@ export type TopNavbarDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | HomeDocument
+  | CopyRightDocument
   | FooterDocument
   | NavbarDocument
   | TopNavbarDocument;
@@ -1327,6 +1360,8 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      CopyRightDocument,
+      CopyRightDocumentData,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataFooterMediaItem,
