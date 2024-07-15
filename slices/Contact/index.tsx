@@ -1,8 +1,7 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import styles from "../../components/Contact/contact.module.scss";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import Link from "next/link";
+import styles from "./contact.module.scss";
+import { PrismicNextImage } from "@prismicio/next";
 import { asImageSrc } from "@prismicio/client";
 import { asText } from "@prismicio/client/richtext";
 

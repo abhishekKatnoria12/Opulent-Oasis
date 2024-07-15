@@ -1,6 +1,6 @@
 import { Content, asImageSrc, asText } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import styles from "../../components/OurProjects/ourprojects.module.scss";
+import styles from "./ourprojects.module.scss";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";

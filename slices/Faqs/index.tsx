@@ -1,6 +1,6 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import styles from "../../components/FAQ/faq.module.scss";
+import styles from "./faq.module.scss";
 import { useState } from "react";
 import { PrismicNextImage } from "@prismicio/next";
 import { asText } from "@prismicio/client/richtext";

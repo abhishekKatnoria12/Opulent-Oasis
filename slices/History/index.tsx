@@ -4,7 +4,7 @@ import {
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
-import styles from "../../components/History/history.module.scss";
+import styles from "./history.module.scss";
 
 /**
  * Props for `History`.

@@ -4,7 +4,7 @@ import {
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
-import styles from "../../components/OurClients/ourclient.module.scss";
+import styles from "./ourclient.module.scss";
 
 import Slider from "react-slick";
 

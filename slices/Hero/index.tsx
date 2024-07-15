@@ -1,7 +1,7 @@
-import { Content, asImageSrc, asLink } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { Content, asImageSrc } from "@prismicio/client";
+import { PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import styles from "../../components/Banner/banner.module.scss";
+import styles from "./banner.module.scss";
 import { asText } from "@prismicio/client/richtext";
 
 /**

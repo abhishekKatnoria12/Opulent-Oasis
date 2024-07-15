@@ -4,7 +4,7 @@ import {
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
-import styles from "../../components/OurBrands/ourbrands.module.scss";
+import styles from "./ourbrands.module.scss";
 import { asText } from "@prismicio/client/richtext";
 
 /**
