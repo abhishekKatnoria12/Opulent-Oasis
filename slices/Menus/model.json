@@ -1,0 +1,80 @@
+{
+  "id": "menus",
+  "type": "SharedSlice",
+  "name": "Menus",
+  "description": "Menus",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "MenuLabel": {
+          "type": "Text",
+          "config": {
+            "label": "Menu Label",
+            "placeholder": ""
+          }
+        },
+        "MenuLink": {
+          "type": "Text",
+          "config": {
+            "label": "Menu Link",
+            "placeholder": ""
+          }
+        },
+        "ChildMenus": {
+          "type": "Group",
+          "config": {
+            "label": "Child Menus",
+            "repeat": true,
+            "fields": {
+              "MenuLabel": {
+                "type": "Text",
+                "config": {
+                  "label": "Menu Label",
+                  "placeholder": ""
+                }
+              },
+              "MenuLink": {
+                "type": "Text",
+                "config": {
+                  "label": "Menu Link",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "Button": {
+          "type": "Group",
+          "config": {
+            "label": "Button",
+            "repeat": true,
+            "fields": {
+              "ButtonLabel": {
+                "type": "Text",
+                "config": {
+                  "label": "Button Label",
+                  "placeholder": ""
+                }
+              },
+              "ButtonLink": {
+                "type": "Link",
+                "config": {
+                  "label": "Button Link",
+                  "placeholder": "",
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

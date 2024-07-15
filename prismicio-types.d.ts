@@ -351,30 +351,7 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
-/**
- * Item in *Navbar → Menus *
- */
-export interface NavbarDocumentDataMenusItem {
-  /**
-   * Label field in *Navbar → Menus *
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.Menus[].Label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  Label: prismic.KeyTextField;
-
-  /**
-   * Href field in *Navbar → Menus *
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.Menus[].Href
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  Href: prismic.LinkField;
-}
+type NavbarDocumentDataSlicesSlice = MenusSlice;
 
 /**
  * Content for Navbar documents
@@ -392,37 +369,15 @@ interface NavbarDocumentData {
   NavbarLogo: prismic.ImageField<never>;
 
   /**
-   * Heading field in *Navbar*
+   * Slice Zone field in *Navbar*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.Heading
+   * - **API ID Path**: navbar.slices[]
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  Heading: prismic.RichTextField;
-
-  /**
-   * Menus  field in *Navbar*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.Menus[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  Menus: prismic.GroupField<Simplify<NavbarDocumentDataMenusItem>>;
-
-  /**
-   * Button field in *Navbar*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.Button
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  Button: prismic.KeyTextField;
+  slices: prismic.SliceZone<NavbarDocumentDataSlicesSlice>;
 }
 
 /**
@@ -922,6 +877,130 @@ export type HistorySlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Menus → Default → Primary → Child Menus*
+ */
+export interface MenusSliceDefaultPrimaryChildMenusItem {
+  /**
+   * Menu Label field in *Menus → Default → Primary → Child Menus*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.default.primary.ChildMenus[].MenuLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  MenuLabel: prismic.KeyTextField;
+
+  /**
+   * Menu Link field in *Menus → Default → Primary → Child Menus*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.default.primary.ChildMenus[].MenuLink
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  MenuLink: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Menus → Default → Primary → Button*
+ */
+export interface MenusSliceDefaultPrimaryButtonItem {
+  /**
+   * Button Label field in *Menus → Default → Primary → Button*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.default.primary.Button[].ButtonLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  ButtonLabel: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Menus → Default → Primary → Button*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.default.primary.Button[].ButtonLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  ButtonLink: prismic.LinkField;
+}
+
+/**
+ * Primary content in *Menus → Default → Primary*
+ */
+export interface MenusSliceDefaultPrimary {
+  /**
+   * Menu Label field in *Menus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.default.primary.MenuLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  MenuLabel: prismic.KeyTextField;
+
+  /**
+   * Menu Link field in *Menus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.default.primary.MenuLink
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  MenuLink: prismic.KeyTextField;
+
+  /**
+   * Child Menus field in *Menus → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.default.primary.ChildMenus[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  ChildMenus: prismic.GroupField<
+    Simplify<MenusSliceDefaultPrimaryChildMenusItem>
+  >;
+
+  /**
+   * Button field in *Menus → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menus.default.primary.Button[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  Button: prismic.GroupField<Simplify<MenusSliceDefaultPrimaryButtonItem>>;
+}
+
+/**
+ * Default variation for Menus Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenusSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MenusSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Menus*
+ */
+type MenusSliceVariation = MenusSliceDefault;
+
+/**
+ * Menus Shared Slice
+ *
+ * - **API ID**: `menus`
+ * - **Description**: Menus
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenusSlice = prismic.SharedSlice<"menus", MenusSliceVariation>;
+
+/**
  * Primary content in *OurBrand → Default → Primary*
  */
 export interface OurBrandSliceDefaultPrimary {
@@ -1371,7 +1450,7 @@ declare module "@prismicio/client" {
       FooterDocumentDataFooterLink4Item,
       NavbarDocument,
       NavbarDocumentData,
-      NavbarDocumentDataMenusItem,
+      NavbarDocumentDataSlicesSlice,
       TopNavbarDocument,
       TopNavbarDocumentData,
       TopNavbarDocumentDataTopNavbarItem,
@@ -1396,6 +1475,12 @@ declare module "@prismicio/client" {
       HistorySliceDefaultPrimary,
       HistorySliceVariation,
       HistorySliceDefault,
+      MenusSlice,
+      MenusSliceDefaultPrimaryChildMenusItem,
+      MenusSliceDefaultPrimaryButtonItem,
+      MenusSliceDefaultPrimary,
+      MenusSliceVariation,
+      MenusSliceDefault,
       OurBrandSlice,
       OurBrandSliceDefaultPrimary,
       OurBrandSliceVariation,

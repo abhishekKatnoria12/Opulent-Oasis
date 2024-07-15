@@ -14,45 +14,15 @@
           "thumbnails": []
         }
       },
-      "Heading": {
-        "type": "StructuredText",
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
         "config": {
-          "label": "Heading",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "Menus": {
-        "type": "Group",
-        "config": {
-          "label": "Menus ",
-          "repeat": true,
-          "fields": {
-            "Label": {
-              "type": "Text",
-              "config": {
-                "label": "Label",
-                "placeholder": ""
-              }
-            },
-            "Href": {
-              "type": "Link",
-              "config": {
-                "label": "Href",
-                "placeholder": "",
-                "allowTargetBlank": false,
-                "select": null
-              }
+          "choices": {
+            "menus": {
+              "type": "SharedSlice"
             }
           }
-        }
-      },
-      "Button": {
-        "type": "Text",
-        "config": {
-          "label": "Button",
-          "placeholder": ""
         }
       }
     }
