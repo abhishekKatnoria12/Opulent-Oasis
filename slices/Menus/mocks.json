@@ -8,11 +8,6 @@
 				"value": "flow",
 				"type": "Text"
 			},
-			"MenuLink": {
-				"__TYPE__": "FieldContent",
-				"value": "eye",
-				"type": "Text"
-			},
 			"ChildMenus": {
 				"__TYPE__": "GroupContentType",
 				"value": [
@@ -39,33 +34,12 @@
 					}
 				]
 			},
-			"Button": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"ButtonLabel",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "call",
-									"type": "Text"
-								}
-							],
-							[
-								"ButtonLink",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://prismic.io"
-									}
-								}
-							]
-						]
-					}
-				]
+			"MenuLink": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
 			}
 		},
 		"items": []

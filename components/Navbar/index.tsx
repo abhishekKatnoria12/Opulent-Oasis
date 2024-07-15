@@ -1,7 +1,6 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { NavbarDocument } from "@/prismicio-types";
@@ -44,24 +43,38 @@ const Navbar = ({ navbar }: NavbarProps) => {
             )}
           </div>
           <ul className={`navbar__menu ${isActive ? "is-open" : ""}`}>
-            {navbar?.data?.Menus?.map((item, index) => (
+            {navbar?.data?.slices?.map((item, index) => (
               <li key={index} className="navbar__links">
-                <PrismicNextLink href={item?.Href.toString()}>
-                  {item?.Label}
+                <PrismicNextLink href={item?.primary?.MenuLink.toString()}>
+                  {item?.primary?.MenuLabel}
                 </PrismicNextLink>
-                {/* {item?.submenu && (
-                  <Image
-                    loading="lazy"
-                    src="/vector.svg"
-                    width={6}
-                    height={10}
-                    alt=""
-                    className="navbar__arrow"
-                  />
-                )} */}
+                {item?.primary?.ChildMenus.length > 0 &&
+                  item?.primary?.ChildMenus && (
+                    <>
+                      <Image
+                        loading="lazy"
+                        src="/vector.svg"
+                        width={6}
+                        height={10}
+                        alt=""
+                        className="navbar__arrow"
+                      />
+                      {/* <div className="navbar__childmenu">
+                        {item?.primary?.ChildMenus.map((items, index) =>(
+                               <h6>{items?.MenuLabel}</h6>
+                         ))}
+                        
+                        </div> */}
+
+                    </>
+                  )}
               </li>
             ))}
-            <button className="navbar__btn">{data?.Button}</button>
+            {data?.Button.map((item, index) => (
+              <button className="navbar__btn" key={index}>
+                {item?.ButtonLabel}
+              </button>
+            ))}
           </ul>
         </div>
       </div>
