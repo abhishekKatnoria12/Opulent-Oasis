@@ -21,43 +21,6 @@ export const topNav = [
   },
 ];
 
-// export const navbar = {
-//   image: {
-//     src: "/bannerGroup.png",
-//     height: 58,
-//     width: 51,
-//     alt: "logo",
-//   },
-
-//   menu: [
-//     {
-//       text: "Home",
-//       href: "/",
-//     },
-//     {
-//       text: "About Us",
-//       href: "/about-us",
-//     },
-//     {
-//       text: "Our Brands",
-//       href: "/our-brands",
-//     },
-//     {
-//       text: "Projects",
-//       href: "/propjects",
-//     },
-//     {
-//       text: "Eng",
-//       href: "/investors",
-//       submenu: true,
-//     },
-//   ],
-
-//   button: {
-//     text: "Contact Us",
-//     href: "/contact-us",
-//   },
-// };
 
 export const bannerData = {
   banners_bg: {

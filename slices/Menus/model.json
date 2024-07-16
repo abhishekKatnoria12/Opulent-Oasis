@@ -20,10 +20,11 @@
           }
         },
         "MenuLink": {
-          "type": "Text",
+          "type": "Link",
           "config": {
             "label": "Menu Link",
-            "placeholder": ""
+            "placeholder": "",
+            "select": null
           }
         },
         "ChildMenus": {
@@ -44,30 +45,6 @@
                 "config": {
                   "label": "Menu Link",
                   "placeholder": ""
-                }
-              }
-            }
-          }
-        },
-        "Button": {
-          "type": "Group",
-          "config": {
-            "label": "Button",
-            "repeat": true,
-            "fields": {
-              "ButtonLabel": {
-                "type": "Text",
-                "config": {
-                  "label": "Button Label",
-                  "placeholder": ""
-                }
-              },
-              "ButtonLink": {
-                "type": "Link",
-                "config": {
-                  "label": "Button Link",
-                  "placeholder": "",
-                  "select": null
                 }
               }
             }

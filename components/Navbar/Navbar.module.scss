@@ -3,6 +3,7 @@
 .navbar {
     width: 100%;
     position: absolute;
+
     :global .navbar {
         &__wrap {
             padding-block: 11px;
@@ -68,8 +69,10 @@
                     transform-origin: bottom right;
                     transition: transform 0.25s ease-out;
                 }
+
                 &:hover {
                     color: $primary-color;
+
                     &::after {
                         transform: scaleX(1);
                         transform-origin: bottom left;
@@ -159,8 +162,7 @@
             }
 
             &__arrow {
-                filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(2232%) hue-rotate(209deg)
-                    brightness(93%) contrast(89%);
+                filter: brightness(0) saturate(100%) invert(17%) sepia(93%) saturate(2232%) hue-rotate(209deg) brightness(93%) contrast(89%);
             }
 
             &__menu.is-open {
@@ -190,6 +192,30 @@
                     font-size: $fs-lg;
                 }
             }
+        }
+
+        &__links {
+
+            & :hover {
+                &__childmenu {
+                    display: block;
+                }
+            }
+
+            &__childmenu {
+                display: none;
+
+            }
+        }
+
+
+        &__childmenu {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: red;
+            width: 100%;
+            z-index: 1;
         }
     }
 }
