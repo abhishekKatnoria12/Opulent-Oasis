@@ -11,7 +11,6 @@ import { asImageSrc, asText } from "@prismicio/client";
 type NavbarProps = PropsWithChildren<{ navbar: NavbarDocument }>;
 
 const Navbar = ({ navbar }: NavbarProps) => {
-  console.log(navbar);
   const { data } = navbar;
   const [isActive, setIsActive] = useState(false);
 
