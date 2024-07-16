@@ -4,12 +4,14 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { NavbarDocument } from "@/prismicio-types";
-import { PrismicImage, PrismicRichText } from "@prismicio/react";
+import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { asImageSrc, asText } from "@prismicio/client";
 
 type NavbarProps = PropsWithChildren<{ navbar: NavbarDocument }>;
 
 const Navbar = ({ navbar }: NavbarProps) => {
+  console.log(navbar);
   const { data } = navbar;
   const [isActive, setIsActive] = useState(false);
 
@@ -21,10 +23,17 @@ const Navbar = ({ navbar }: NavbarProps) => {
     <div className={`${styles.navbar} .continer-fluid`}>
       <div className="navbar__wrap container-sm">
         <div className="navbar__left">
-          <PrismicNextImage field={data?.NavbarLogo} className="navbar__img" />
-          <div className="navbar__title">
-            <PrismicRichText field={data?.Heading} />
-          </div>
+          {asImageSrc(data?.NavbarLogo) && (
+            <PrismicNextImage
+              field={data?.NavbarLogo}
+              className="navbar__img"
+            />
+          )}
+          {asText(data?.Heading) && (
+            <div className="navbar__title">
+              <PrismicRichText field={data?.Heading} />
+            </div>
+          )}
         </div>
         <div className="navbar__right">
           <div className="navbar__hamburger" onClick={handleLogo}>
@@ -65,7 +74,6 @@ const Navbar = ({ navbar }: NavbarProps) => {
                          ))}
                         
                         </div> */}
-
                     </>
                   )}
               </li>
